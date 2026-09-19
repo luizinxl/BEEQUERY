@@ -27,7 +27,7 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/ementa', (_req, res) => {
-  res.sendFile(path.join(publicPath, 'ementa.html'));
+  res.redirect('/#ementa');
 });
 
 /* ── Health check (API) ───────────────────────── */

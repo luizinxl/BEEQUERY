@@ -1,6 +1,6 @@
 // BeeQuery - Abelhas decorativas espalhadas pelo site
 (function () {
-    const BEE_URL = '/img/bee.png';
+    const BEE_URL = '/img/bee.png?v=3';
 
     function placeBees() {
         // Remove abelhas anteriores se já existirem para evitar duplicatas
