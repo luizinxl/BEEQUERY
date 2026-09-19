@@ -3,6 +3,9 @@
 const express = require('express');
 const router  = express.Router();
 
+const DEFAULT_WHATSAPP = 'https://wa.me/5511999999999';
+const DEFAULT_COURSE   = 'https://hotmart.com/produto/beequery';
+
 /**
  * GET /api/redirect/whatsapp
  * Redireciona o usuário para o WhatsApp configurado via env.
@@ -11,11 +14,7 @@ const router  = express.Router();
  *   ?msg=Olá, tenho interesse!  → pré-preenche a mensagem no WhatsApp
  */
 router.get('/redirect/whatsapp', (req, res) => {
-  const baseUrl = process.env.WHATSAPP_URL;
-
-  if (!baseUrl) {
-    return res.status(500).json({ error: 'WHATSAPP_URL não configurado no servidor.' });
-  }
+  const baseUrl = process.env.WHATSAPP_URL || DEFAULT_WHATSAPP;
 
   // Permite sobrescrever a mensagem via query string
   const customMsg = req.query.msg;
@@ -37,11 +36,7 @@ router.get('/redirect/whatsapp', (req, res) => {
  * Redireciona o usuário para a página do curso.
  */
 router.get('/redirect/curso', (_req, res) => {
-  const destination = process.env.COURSE_URL;
-
-  if (!destination) {
-    return res.status(500).json({ error: 'COURSE_URL não configurado no servidor.' });
-  }
+  const destination = process.env.COURSE_URL || DEFAULT_COURSE;
 
   console.log(`[${new Date().toISOString()}] Redirect → Curso`);
 
@@ -55,8 +50,8 @@ router.get('/redirect/curso', (_req, res) => {
  */
 router.get('/links', (_req, res) => {
   return res.json({
-    whatsapp: process.env.WHATSAPP_URL || null,
-    curso:    process.env.COURSE_URL    || null,
+    whatsapp: process.env.WHATSAPP_URL || DEFAULT_WHATSAPP,
+    curso:    process.env.COURSE_URL    || DEFAULT_COURSE,
   });
 });
 
