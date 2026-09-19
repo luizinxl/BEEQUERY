@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1789850124.24869,
-    "seen": 1789851226.080385,
-    "ast_hash": "fbb37d7e71b0deb391261569616c135e",
+    "mtime": 1789852361.2031953,
+    "seen": 1789852924.9879134,
+    "ast_hash": "195ffb80e65935219fee7bdde7a3610a",
     "semantic_hash": ""
   },
   "public/js/bee.js": {
@@ -29,16 +29,10 @@
     "ast_hash": "df162e9f06febce90845010a947bcc05",
     "semantic_hash": ""
   },
-  "public/ementa.html": {
-    "mtime": 1789850418.2499816,
-    "seen": 1789851226.0803993,
-    "ast_hash": "79456b4d083dc6a142c8d4861cdbb8cf",
-    "semantic_hash": ""
-  },
   "public/index.html": {
-    "mtime": 1789850402.6867058,
-    "seen": 1789851226.0804012,
-    "ast_hash": "92922d018ee7f1d2bcb68ac5bd755806",
+    "mtime": 1789852915.5630765,
+    "seen": 1789852924.9879317,
+    "ast_hash": "4caa5ca4c48f85084ac8e1ca575acf59",
     "semantic_hash": ""
   },
   "public/img/bee.png": {
@@ -54,9 +48,15 @@
     "semantic_hash": ""
   },
   "vercel.json": {
-    "mtime": 1789851591.2930696,
-    "seen": 1789851653.91644,
-    "ast_hash": "dc58e4c0db37916319b8f93729c0b2b5",
+    "mtime": 1789852148.5001593,
+    "seen": 1789852924.9879267,
+    "ast_hash": "309f83693e4b365b869801225ce1f588",
+    "semantic_hash": ""
+  },
+  "public/favicon.png": {
+    "mtime": 1789851258.2921472,
+    "seen": 1789852924.9879339,
+    "ast_hash": "0c087d84d4abf4fb47eff770b8c54ec1",
     "semantic_hash": ""
   }
 }

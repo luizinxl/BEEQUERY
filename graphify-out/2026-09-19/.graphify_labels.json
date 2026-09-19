@@ -1,10 +1,13 @@
 {
-  "0": "index.js",
+  "0": "src/index.js",
   "1": "package.json",
   "2": "BeeQuery Backend 🐝",
   "3": "dependencies",
   "4": "scripts",
   "5": "devDependencies",
   "6": "engines",
-  "7": "bee.js"
+  "7": "bee.js",
+  "8": "redirect.js",
+  "9": "vercel.json",
+  "10": "api/index.js"
 }

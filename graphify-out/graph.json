@@ -101,7 +101,7 @@
       "file_type": "concept",
       "norm_label": "cors",
       "source_file": "package.json",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "package",
@@ -134,7 +134,7 @@
       "file_type": "code",
       "norm_label": "license",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "package_main",
@@ -178,7 +178,7 @@
       "file_type": "concept",
       "norm_label": "cheerio",
       "source_file": "package.json",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "ref_dotenv",
@@ -189,7 +189,7 @@
       "file_type": "concept",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "ref_nodemon",
@@ -200,7 +200,18 @@
       "file_type": "concept",
       "norm_label": "nodemon",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
+    },
+    {
+      "id": "ref_vercel_analytics",
+      "label": "@vercel/analytics",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@vercel/analytics",
+      "source_file": "package.json",
+      "source_location": "L11"
     },
     {
       "id": "api_index",
@@ -352,7 +363,7 @@
       "file_type": "code",
       "norm_label": "cheerio",
       "source_file": "package.json",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "package_dependencies_cors",
@@ -363,7 +374,7 @@
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "package.json",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "package_dependencies_dotenv",
@@ -374,7 +385,7 @@
       "file_type": "code",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "package_dependencies_express",
@@ -385,7 +396,18 @@
       "file_type": "code",
       "norm_label": "express",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
+    },
+    {
+      "id": "package_dependencies_vercel_analytics",
+      "label": "@vercel/analytics",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "@vercel/analytics",
+      "source_file": "package.json",
+      "source_location": "L11"
     },
     {
       "id": "package_scripts",
@@ -429,7 +451,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "package_devdependencies_nodemon",
@@ -440,7 +462,7 @@
       "file_type": "code",
       "norm_label": "nodemon",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "package_engines",
@@ -451,7 +473,7 @@
       "file_type": "code",
       "norm_label": "engines",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "package_engines_node",
@@ -462,7 +484,7 @@
       "file_type": "code",
       "norm_label": "node",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "public_js_bee",
@@ -517,7 +539,7 @@
       "file_type": "concept",
       "norm_label": "express",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "vercel",
@@ -567,7 +589,7 @@
   "links": [
     {
       "source": "package",
-      "target": "ref_cheerio",
+      "target": "ref_vercel_analytics",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -579,7 +601,7 @@
     },
     {
       "source": "package",
-      "target": "ref_cors",
+      "target": "ref_cheerio",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -591,7 +613,7 @@
     },
     {
       "source": "package",
-      "target": "ref_dotenv",
+      "target": "ref_cors",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -603,7 +625,7 @@
     },
     {
       "source": "package",
-      "target": "ref_express",
+      "target": "ref_dotenv",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -615,6 +637,18 @@
     },
     {
       "source": "package",
+      "target": "ref_express",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "ref_nodemon",
       "relation": "imports",
       "_origin": "ast",
@@ -622,7 +656,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -715,18 +749,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
-      "target": "package_engines",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -742,13 +765,24 @@
     },
     {
       "source": "package",
+      "target": "package_engines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "package_license",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -797,7 +831,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_cheerio",
+      "target": "package_dependencies_vercel_analytics",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -808,7 +842,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_cors",
+      "target": "package_dependencies_cheerio",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -819,7 +853,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_dotenv",
+      "target": "package_dependencies_cors",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -830,13 +864,24 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_express",
+      "target": "package_dependencies_dotenv",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_express",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -847,7 +892,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -858,7 +903,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -1105,5 +1150,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8c5ff689f0270325e6a46476978acf44ed48a6d9"
+  "built_at_commit": "e743a47cbefcafe660221a457f3da69d702ff7b5"
 }
