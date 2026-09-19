@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initBee() {
+    console.log('🐝 Inicializando abelha...');
     // Logo / Bee Image URL
     const BEE_URL = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTH4m4SSA5YH63AxZIS2porJwMDU1n3sUoXgOI2Xr0Sz_83Q0GB2wW8gjTdUJ0Oi8hv8_yy6eAxc_oA97Uw4KwydlUP816-KA1oTHHgfGmIT03TF9DECixnXaB4hGOiEFU6tpcrExCR-2erMgKHXknFUNMU56RCk_bvTFBfNY_DCMjS12XI25g2R3o46XPtfklEidIKebhM91_cCbsJU3M9KJQFHvq3_WUthfYNrzL6sgg8E5emJ5U6EjKYvDdSiG2q1A';
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const beeInner = document.createElement('div');
     beeInner.style.width = '48px'; 
     beeInner.style.height = '48px';
-    beeInner.style.backgroundImage = `url(${BEE_URL})`;
+    beeInner.style.backgroundImage = `url("${BEE_URL}")`;
     beeInner.style.backgroundSize = 'contain';
     beeInner.style.backgroundRepeat = 'no-repeat';
     beeInner.style.backgroundPosition = 'center';
@@ -54,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentAngle = 0;
     
     // A imagem original tem a cabeça da abelha apontando para sudoeste (bottom-left)
-    // Sudoeste no plano 2D (onde direita é 0, baixo é 90) corresponde a 135 graus.
-    // Portanto, para girar a imagem para o ângulo 0, precisamos aplicar uma rotação de -135 graus.
     const IMAGE_ANGLE_OFFSET = -135; 
 
     updateBeeTransform(beePos.x, beePos.y, currentAngle + IMAGE_ANGLE_OFFSET);
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetY = rect.top + window.scrollY + (rect.height * 0.2) + Math.random() * (rect.height * 0.6);
             }
         } else {
-            // Anywhere on the visible screen
             targetX = window.scrollX + 50 + Math.random() * (window.innerWidth - 100);
             targetY = window.scrollY + 50 + Math.random() * (window.innerHeight - 100);
         }
@@ -118,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const angleToTarget = Math.atan2(target.y - beePos.y, target.x - beePos.x);
         
         const offsetDir = Math.random() > 0.5 ? 1 : -1;
-        // Curva mais acentuada: 30% a 70% da distância como offset
         const offset = dist * (0.3 + Math.random() * 0.4) * offsetDir;
         
         const controlPt = {
@@ -126,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: midY + Math.sin(angleToTarget + Math.PI / 2) * offset
         };
 
-        const duration = Math.max(1500, dist * 2); // Velocidade do voo
+        const duration = Math.max(1500, dist * 2); 
         let startTime = null;
 
         function animateFlight(time) {
@@ -164,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 beePos = { x: target.x, y: target.y };
                 beeInner.className = 'bee-hovering';
                 
-                // Tempo pousada: de 3s a 8s
                 const waitTime = 3000 + Math.random() * 5000;
                 setTimeout(fly, waitTime);
             }
@@ -173,5 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateFlight);
     }
 
-    setTimeout(fly, 2000); // Inicia após 2 segundos
-});
+    setTimeout(fly, 2000); 
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBee);
+} else {
+    initBee();
+}
