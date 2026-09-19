@@ -4,7 +4,7 @@ const express = require('express');
 const router  = express.Router();
 
 const DEFAULT_WHATSAPP = 'https://wa.me/5511999999999';
-const DEFAULT_COURSE   = 'https://hotmart.com/produto/beequery';
+const DEFAULT_COURSE   = 'https://www.udemy.com/course/power-query-em-excel-aumente-sua-produtividade-no-excel/?instructorPreviewMode=guest&couponCode=KEEPLEARNING';
 
 /**
  * GET /api/redirect/whatsapp
