@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ementa Oficial - BeeQuery</title>
+<!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms & Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#38393d",
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "surface-variant": "#343539",
+            "on-primary": "#412d00",
+            "surface": "#121317",
+            "surface-dim": "#121317",
+            "on-secondary-fixed": "#1c1b1b",
+            "on-background": "#e3e2e7",
+            "inverse-primary": "#7c5800",
+            "surface-container-lowest": "#0d0e12",
+            "on-tertiary-fixed": "#291800",
+            "on-surface-variant": "#d5c4ab",
+            "outline-variant": "#514532",
+            "on-primary-container": "#6b4c00",
+            "primary": "#ffdca1",
+            "secondary-container": "#4a4949",
+            "surface-container": "#1e1f23",
+            "on-tertiary-fixed-variant": "#624000",
+            "surface-container-high": "#292a2e",
+            "primary-fixed": "#ffdea8",
+            "outline": "#9e8f78",
+            "secondary-fixed": "#e5e2e1",
+            "surface-tint": "#ffba20",
+            "tertiary-fixed": "#ffddb2",
+            "inverse-surface": "#e3e2e7",
+            "on-secondary-container": "#bab8b7",
+            "background": "#121317",
+            "secondary": "#c8c6c5",
+            "primary-fixed-dim": "#ffba20",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#ffb94c",
+            "on-error": "#690005",
+            "on-tertiary": "#442b00",
+            "primary-container": "#ffb800",
+            "tertiary-container": "#ffb743",
+            "tertiary": "#ffdbac",
+            "on-tertiary-container": "#704900",
+            "on-surface": "#e3e2e7",
+            "on-primary-fixed-variant": "#5e4200",
+            "surface-container-low": "#1a1b1f",
+            "surface-container-highest": "#343539",
+            "on-primary-fixed": "#271900",
+            "inverse-on-surface": "#2f3034",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-secondary": "#313030",
+            "on-secondary-fixed-variant": "#474646"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-xl": "2rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["JetBrains Mono"],
+            "body-md": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "code-snippet": ["JetBrains Mono"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["JetBrains Mono"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "code-snippet": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Subtle glow token */
+    .glow-amber-accent {
+      box-shadow: 0 0 24px -4px rgba(255, 184, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+    <div class="max-w-4xl mx-auto p-8">
+        <a href="/" class="text-primary-container hover:underline mb-8 inline-block">← Voltar para a página principal</a>
+        <section class="py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Conteúdo Programático</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Grade Curricular Oficial BeeQuery</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+            Passo a passo, da ambientação inicial à engenharia e automação avançada com M-Engine.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Lista de Módulos (8 Colunas) -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Módulo 1 -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 01</span>
+<h3 class="font-title-md text-title-md text-on-surface">Fundamentos &amp; Interface do Power Query</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8 Aulas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Conceito de ETL corporativo, conexão de fontes heterogêneas, tipagem preventiva de dados, etapas aplicadas e preservação das bases originais sem corrupção de arquivos.
+              </p>
+</div>
+<!-- Módulo 2 -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 02</span>
+<h3 class="font-title-md text-title-md text-on-surface">Transformações Essenciais &amp; Modelagem</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Aulas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Mesclar consultas (o substituto definitivo e performático do PROCV), acrescentar tabelas, transposição avançada, unpivot de matrizes contábeis e limpeza de caracteres invisíveis.
+              </p>
+</div>
+<!-- Módulo 3 -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 03</span>
+<h3 class="font-title-md text-title-md text-on-surface">Consolidação em Lote &amp; Pastas Dinâmicas</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10 Aulas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Automatizando pastas inteiras de fechamento mensal. Padronização de esquemas variáveis, tratamento de colunas em ordens diferentes e arquivos corrompidos no fluxo.
+              </p>
+</div>
+<!-- Módulo 4 -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 04</span>
+<h3 class="font-title-md text-title-md text-on-surface">Linguagem M Descomplicada</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11 Aulas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                A estrutura Let...In, tipos de dados primitivos vs estruturas (List, Record, Table), criação de parâmetros dinâmicos de data e funções personalizadas invocadas por linha.
+              </p>
+</div>
+<!-- Módulo 5 -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 05</span>
+<h3 class="font-title-md text-title-md text-on-surface">Casos Reais de Mercado (Logística, Indústria, Finanças)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9 Aulas Práticas</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Resolução ponta a ponta de desafios enviados por grandes corporações: conciliação bancária massiva, consolidação de fretes de 50 transportadoras e auditoria de estoque.
+              </p>
+</div>
+</div>
+<!-- Card Lateral de Bônus Especial (4 Colunas) -->
+<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-high border-2 border-primary-container/50 space-y-6">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+<span class="font-label-md text-label-md uppercase tracking-wider font-bold">Pacote Exclusivo de Bônus</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Incluso Gratuitamente na Sua Matrícula:</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="all_inclusive">all_inclusive</span>
+<div>
+<strong class="font-title-md text-title-md text-on-surface block">Acesso Vitalício</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Acesse sempre que precisar consultar templates e novas atualizações da ferramenta.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="forum">forum</span>
+<div>
+<strong class="font-title-md text-title-md text-on-surface block">Comunidade Fechada BeeQuery</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tire dúvidas de casos complexos da sua empresa diretamente com instrutores e especialistas.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="verified">verified</span>
+<div>
+<strong class="font-title-md text-title-md text-on-surface block">Certificado Oficial com Validação</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Comprovação de horas técnicas e código de autenticidade para enriquecer seu LinkedIn.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<a class="w-full inline-flex justify-center items-center py-3 px-4 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg font-bold hover:bg-primary transition-all" href="/api/redirect/curso">
+                Garantir Bônus e Vaga
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+    </div>
+
+</body></html>
