@@ -1,0 +1,44 @@
+{
+  "package.json": {
+    "mtime": 1789850124.24869,
+    "seen": 1789851226.080385,
+    "ast_hash": "fbb37d7e71b0deb391261569616c135e",
+    "semantic_hash": ""
+  },
+  "public/js/bee.js": {
+    "mtime": 1789851153.614272,
+    "seen": 1789851226.0803916,
+    "ast_hash": "385e45bcd120b0e00ef950f78f7fcff4",
+    "semantic_hash": ""
+  },
+  "src/index.js": {
+    "mtime": 1789850124.24869,
+    "seen": 1789851226.0803945,
+    "ast_hash": "c6aa7594c40d865e9f937624ec966af8",
+    "semantic_hash": ""
+  },
+  "src/routes/redirect.js": {
+    "mtime": 1789850124.24869,
+    "seen": 1789851226.080396,
+    "ast_hash": "57960121e52b22a1fb9667a1ae997327",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789850124.24869,
+    "seen": 1789851226.0803978,
+    "ast_hash": "df162e9f06febce90845010a947bcc05",
+    "semantic_hash": ""
+  },
+  "public/ementa.html": {
+    "mtime": 1789850418.2499816,
+    "seen": 1789851226.0803993,
+    "ast_hash": "79456b4d083dc6a142c8d4861cdbb8cf",
+    "semantic_hash": ""
+  },
+  "public/index.html": {
+    "mtime": 1789850402.6867058,
+    "seen": 1789851226.0804012,
+    "ast_hash": "92922d018ee7f1d2bcb68ac5bd755806",
+    "semantic_hash": ""
+  }
+}
