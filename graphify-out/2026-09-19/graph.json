@@ -17,12 +17,12 @@
     },
     {
       "id": "src_index",
-      "label": "src/index.js",
+      "label": "index.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "code",
-      "norm_label": "src/index.js",
+      "norm_label": "index.js",
       "source_file": "src/index.js",
       "source_location": "L1"
     },
@@ -31,18 +31,18 @@
       "label": "app",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "code",
       "norm_label": "app",
       "source_file": "src/index.js",
-      "source_location": "L10"
+      "source_location": "L9"
     },
     {
       "id": "src_index_cors",
       "label": "cors",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "src/index.js",
@@ -53,55 +53,77 @@
       "label": "express",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "code",
       "norm_label": "express",
       "source_file": "src/index.js",
       "source_location": "L3"
     },
     {
-      "id": "src_index_path",
-      "label": "path",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "src/index.js",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "src/index.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_index_publicpath",
-      "label": "publicPath",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "src/index.js",
-      "file_type": "code",
-      "norm_label": "publicpath",
-      "source_file": "src/index.js",
-      "source_location": "L12"
-    },
-    {
       "id": "src_index_redirectroutes",
       "label": "redirectRoutes",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "code",
       "norm_label": "redirectroutes",
       "source_file": "src/index.js",
-      "source_location": "L8"
+      "source_location": "L7"
+    },
+    {
+      "id": "src_routes_redirect",
+      "label": "redirect.js",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "index.js",
+      "file_type": "code",
+      "norm_label": "redirect.js",
+      "source_file": "src/routes/redirect.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_routes_redirect_express",
+      "label": "express",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "index.js",
+      "file_type": "code",
+      "norm_label": "express",
+      "source_file": "src/routes/redirect.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_routes_redirect_router",
+      "label": "router",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "index.js",
+      "file_type": "code",
+      "norm_label": "router",
+      "source_file": "src/routes/redirect.js",
+      "source_location": "L4"
     },
     {
       "id": "ref_cors",
       "label": "cors",
       "_origin": "ast",
       "community": 0,
-      "community_name": "src/index.js",
+      "community_name": "index.js",
       "file_type": "concept",
       "norm_label": "cors",
       "source_file": "package.json",
       "source_location": "L12"
+    },
+    {
+      "id": "ref_express",
+      "label": "express",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "index.js",
+      "file_type": "concept",
+      "norm_label": "express",
+      "source_file": "package.json",
+      "source_location": "L14"
     },
     {
       "id": "package",
@@ -201,28 +223,6 @@
       "norm_label": "nodemon",
       "source_file": "package.json",
       "source_location": "L17"
-    },
-    {
-      "id": "api_index",
-      "label": "api/index.js",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "api/index.js",
-      "file_type": "code",
-      "norm_label": "api/index.js",
-      "source_file": "api/index.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "api_index_app",
-      "label": "app",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "api/index.js",
-      "file_type": "code",
-      "norm_label": "app",
-      "source_file": "api/index.js",
-      "source_location": "L3"
     },
     {
       "id": "readme",
@@ -474,94 +474,6 @@
       "norm_label": "bee.js",
       "source_file": "public/js/bee.js",
       "source_location": "L1"
-    },
-    {
-      "id": "src_routes_redirect",
-      "label": "redirect.js",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "redirect.js",
-      "file_type": "code",
-      "norm_label": "redirect.js",
-      "source_file": "src/routes/redirect.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_routes_redirect_express",
-      "label": "express",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "redirect.js",
-      "file_type": "code",
-      "norm_label": "express",
-      "source_file": "src/routes/redirect.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_routes_redirect_router",
-      "label": "router",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "redirect.js",
-      "file_type": "code",
-      "norm_label": "router",
-      "source_file": "src/routes/redirect.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "ref_express",
-      "label": "express",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "redirect.js",
-      "file_type": "concept",
-      "norm_label": "express",
-      "source_file": "package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "vercel",
-      "label": "vercel.json",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "vercel.json",
-      "file_type": "code",
-      "norm_label": "vercel.json",
-      "source_file": "vercel.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "vercel_cleanurls",
-      "label": "cleanUrls",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "vercel.json",
-      "file_type": "code",
-      "norm_label": "cleanurls",
-      "source_file": "vercel.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "vercel_rewrites",
-      "label": "rewrites",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "vercel.json",
-      "file_type": "code",
-      "norm_label": "rewrites",
-      "source_file": "vercel.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "vercel_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "vercel.json",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "vercel.json",
-      "source_location": "L2"
     }
   ],
   "links": [
@@ -626,18 +538,6 @@
       "weight": 1.0
     },
     {
-      "source": "api_index",
-      "target": "src_index",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "api/index.js",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
       "source": "src_index",
       "target": "ref_express",
       "relation": "imports_from",
@@ -670,7 +570,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/index.js",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -682,17 +582,6 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/redirect.js",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "api_index",
-      "target": "api_index_app",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "api/index.js",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -984,28 +873,6 @@
     },
     {
       "source": "src_index",
-      "target": "src_index_app",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/index.js",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_index",
-      "target": "src_index_publicpath",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/index.js",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_index",
       "target": "src_index_express",
       "relation": "contains",
       "_origin": "ast",
@@ -1028,24 +895,24 @@
     },
     {
       "source": "src_index",
-      "target": "src_index_path",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/index.js",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_index",
       "target": "src_index_redirectroutes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/index.js",
-      "source_location": "L8",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_index",
+      "target": "src_index_app",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/index.js",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -1067,39 +934,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes/redirect.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "vercel",
-      "target": "vercel_version",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "vercel.json",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "vercel",
-      "target": "vercel_cleanurls",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "vercel.json",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "vercel",
-      "target": "vercel_rewrites",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "vercel.json",
       "source_location": "L4",
       "weight": 1.0
     }
