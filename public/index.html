@@ -1,4 +1,6 @@
-<!DOCTYPE html><html class="dark scroll-smooth" lang="pt-BR" style=""><head>
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="pt-BR">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <!-- Vercel Analytics -->
@@ -7,897 +9,1147 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <title>BeeQuery • Análise de Dados &amp; Automação com Power Query e M-Engine</title>
+<meta name="description" content="Domine Power Query e M-Engine. Transforme horas manuais de planilhas em segundos de automação. Curso prático com acesso vitalício e certificado oficial.">
 <!-- Favicon / Brand Icon -->
 <link rel="icon" type="image/png" href="/favicon.png?v=4">
 <link rel="shortcut icon" href="/favicon.ico?v=4">
 <link rel="apple-touch-icon" href="/favicon.png?v=4">
 <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<!-- Tailwind CSS with Forms & Container Plugins -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Theme Configuration Verbatim -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "surface-bright": "#38393d",
-            "on-error-container": "#ffdad6",
-            "error-container": "#93000a",
-            "surface-variant": "#343539",
-            "on-primary": "#412d00",
-            "surface": "#121317",
-            "surface-dim": "#121317",
-            "on-secondary-fixed": "#1c1b1b",
-            "on-background": "#e3e2e7",
-            "inverse-primary": "#7c5800",
-            "surface-container-lowest": "#0d0e12",
-            "on-tertiary-fixed": "#291800",
-            "on-surface-variant": "#d5c4ab",
-            "outline-variant": "#514532",
-            "on-primary-container": "#6b4c00",
-            "primary": "#ffdca1",
-            "secondary-container": "#4a4949",
-            "surface-container": "#1e1f23",
-            "on-tertiary-fixed-variant": "#624000",
-            "surface-container-high": "#292a2e",
-            "primary-fixed": "#ffdea8",
-            "outline": "#9e8f78",
-            "secondary-fixed": "#e5e2e1",
-            "surface-tint": "#ffba20",
-            "tertiary-fixed": "#ffddb2",
-            "inverse-surface": "#e3e2e7",
-            "on-secondary-container": "#bab8b7",
-            "background": "#121317",
-            "secondary": "#c8c6c5",
-            "primary-fixed-dim": "#ffba20",
-            "error": "#ffb4ab",
-            "tertiary-fixed-dim": "#ffb94c",
-            "on-error": "#690005",
-            "on-tertiary": "#442b00",
-            "primary-container": "#ffb800",
-            "tertiary-container": "#ffb743",
-            "tertiary": "#ffdbac",
-            "on-tertiary-container": "#704900",
-            "on-surface": "#e3e2e7",
-            "on-primary-fixed-variant": "#5e4200",
-            "surface-container-low": "#1a1b1f",
-            "surface-container-highest": "#343539",
-            "on-primary-fixed": "#271900",
-            "inverse-on-surface": "#2f3034",
-            "secondary-fixed-dim": "#c8c6c5",
-            "on-secondary": "#313030",
-            "on-secondary-fixed-variant": "#474646"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "margin": "1rem",
-            "space-sm": "0.5rem",
-            "margin-desktop": "2rem",
-            "gutter-desktop": "1.5rem",
-            "space-lg": "1.25rem",
-            "space-xl": "2rem",
-            "space-md": "0.75rem",
-            "gutter": "1rem",
-            "space-xs": "0.25rem"
-          },
-          "fontFamily": {
-            "headline-md": ["Plus Jakarta Sans"],
-            "headline-lg": ["Plus Jakarta Sans"],
-            "label-md": ["JetBrains Mono"],
-            "body-md": ["Plus Jakarta Sans"],
-            "title-md": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Plus Jakarta Sans"],
-            "code-snippet": ["JetBrains Mono"],
-            "headline-sm": ["Plus Jakarta Sans"],
-            "display-lg-mobile": ["Plus Jakarta Sans"],
-            "display-lg": ["Plus Jakarta Sans"],
-            "label-sm": ["JetBrains Mono"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "body-sm": ["Plus Jakarta Sans"]
-          },
-          "fontSize": {
-            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
-            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
-            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-            "code-snippet": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
-            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
-            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
-          }
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-bright": "#38393d",
+          "on-error-container": "#ffdad6",
+          "error-container": "#93000a",
+          "surface-variant": "#343539",
+          "on-primary": "#412d00",
+          "surface": "#121317",
+          "surface-dim": "#121317",
+          "on-background": "#e3e2e7",
+          "inverse-primary": "#7c5800",
+          "surface-container-lowest": "#0d0e12",
+          "on-surface-variant": "#d5c4ab",
+          "outline-variant": "#514532",
+          "on-primary-container": "#6b4c00",
+          "primary": "#ffdca1",
+          "secondary-container": "#4a4949",
+          "surface-container": "#1e1f23",
+          "surface-container-high": "#292a2e",
+          "primary-fixed": "#ffdea8",
+          "outline": "#9e8f78",
+          "surface-tint": "#ffba20",
+          "inverse-surface": "#e3e2e7",
+          "on-secondary-container": "#bab8b7",
+          "background": "#121317",
+          "secondary": "#c8c6c5",
+          "primary-fixed-dim": "#ffba20",
+          "error": "#ffb4ab",
+          "on-error": "#690005",
+          "primary-container": "#ffb800",
+          "tertiary-container": "#ffb743",
+          "tertiary": "#ffdbac",
+          "on-surface": "#e3e2e7",
+          "surface-container-low": "#1a1b1f",
+          "surface-container-highest": "#343539",
+          "inverse-on-surface": "#2f3034"
         },
-      },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          "2xl": "1rem",
+          "3xl": "1.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+          mono: ["JetBrains Mono", "monospace"]
+        }
+      }
     }
-  </script>
+  }
+</script>
 <style>
-    .material-symbols-outlined {
-      font-family: 'Material Symbols Outlined';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 1;
-      letter-spacing: normal;
-      text-transform: none;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: normal;
-      direction: ltr;
-      -webkit-font-feature-settings: 'liga';
-      -webkit-font-smoothing: antialiased;
-    }
-    /* Subtle glow token */
-    .glow-amber-accent {
-      box-shadow: 0 0 24px -4px rgba(255, 184, 0, 0.25);
-    }
-  </style>
+  html { scroll-behavior: smooth; }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Noise Texture Overlay ─────────────────── */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.035;
+  }
+
+  /* ── Navbar States ─────────────────────────── */
+  #main-nav {
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .nav-transparent {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .nav-scrolled {
+    background: rgba(13, 14, 18, 0.82) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(81, 69, 50, 0.3) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+  }
+
+  /* ── Scroll Reveal ─────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: 0.08s; }
+  .reveal-d2 { transition-delay: 0.16s; }
+  .reveal-d3 { transition-delay: 0.24s; }
+  .reveal-d4 { transition-delay: 0.32s; }
+  .reveal-d5 { transition-delay: 0.40s; }
+
+  /* ── Accordion ─────────────────────────────── */
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .accordion-body.acc-open {
+    /* max-height set by JS */
+  }
+  .accordion-icon {
+    transition: transform 0.3s ease;
+  }
+
+  /* ── Mobile Menu ───────────────────────────── */
+  #mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #mobile-menu.menu-open {
+    transform: translateX(0);
+  }
+
+  /* ── Button Hover Physics ──────────────────── */
+  .btn-primary {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    box-shadow: 0 6px 20px -4px rgba(255, 184, 0, 0.3);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-ghost {
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-ghost:hover {
+    transform: translateY(-1px);
+  }
+
+  /* ── Card Hover ────────────────────────────── */
+  .card-hover {
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card-hover:hover {
+    border-color: rgba(255, 184, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+  }
+
+  /* ── Subtle Glow ───────────────────────────── */
+  .glow-amber {
+    box-shadow: 0 0 40px -8px rgba(255, 184, 0, 0.15);
+  }
+
+  /* ── Code syntax highlighting ──────────────── */
+  .code-keyword { color: #ffb800; font-weight: 600; }
+  .code-variable { color: #ffdbac; font-weight: 600; }
+  .code-string { color: #ffdca1; font-family: 'JetBrains Mono', monospace; }
+  .code-comment { color: #9e8f78; font-style: italic; }
+</style>
 </head>
-<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary">
-<!-- TOP NAV BAR (Anchored & JSON Compatible) -->
-<header class="sticky top-0 z-50 w-full bg-surface-container-lowest/80 dark:bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
-<!-- Brand Cluster -->
-<div class="flex items-center gap-4">
-<a class="flex items-center gap-3 group" href="#">
-<img alt="BeeQuery Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105" src="/img/bee.png?v=4">
-<div class="hidden sm:flex flex-col border-l border-outline-variant/40 pl-3">
-<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary tracking-tight">BeeQuery</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">High-Velocity Analytics • por Fernando Rodrigues</span>
-</div>
-</a>
-</div>
-<!-- Navigation Links (Desktop) -->
-<nav class="hidden md:flex items-center space-x-7">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#recursos">Recursos</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#comparativo">Comparativo</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#mentoria">Mentoria</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#depoimentos">Depoimentos</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#faq">FAQ</a>
-</nav>
-<!-- Action Cluster -->
-<div class="flex items-center gap-3">
-<a class="hidden lg:flex items-center justify-center p-2 rounded-lg border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary-container transition-all" href="/api/redirect/whatsapp" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-primary-container" data-icon="chat">chat</span>
-</a>
-<a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg font-semibold hover:bg-primary transition-all duration-200 shadow-sm active:scale-[0.98]" href="/api/redirect/curso">
-<span class="">Garantir Acesso Imediato</span>
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-</a>
-</div>
-</div>
+
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary font-sans">
+
+<!-- ═══════════════════════════════════════════════
+     NOISE TEXTURE OVERLAY
+     ═══════════════════════════════════════════════ -->
+<svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+  <filter id="noise-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+</svg>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════════════════ -->
+<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full border-b border-outline-variant/30 nav-transparent">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-3 flex items-center justify-between">
+    <!-- Brand -->
+    <a class="flex items-center gap-3 group" href="#">
+      <img alt="BeeQuery Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="/img/bee.png?v=4">
+      <div class="hidden sm:flex flex-col">
+        <span class="text-lg font-bold text-primary tracking-tight">BeeQuery</span>
+        <span class="text-[11px] font-mono text-on-surface-variant tracking-wide">por Fernando Rodrigues</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-7">
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#recursos">Recursos</a>
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#comparativo">Comparativo</a>
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#mentoria">Mentoria</a>
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#depoimentos">Depoimentos</a>
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#faq">FAQ</a>
+    </nav>
+
+    <!-- Action Cluster -->
+    <div class="flex items-center gap-3">
+      <a class="hidden lg:flex items-center justify-center p-2.5 rounded-2xl border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary-container/50 btn-ghost"
+         href="/api/redirect/whatsapp" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp">
+        <span class="material-symbols-outlined text-primary-container">chat</span>
+      </a>
+      <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary text-sm font-bold rounded-2xl btn-primary"
+         href="/api/redirect/curso">
+        Garantir Meu Acesso
+      </a>
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-on-surface-variant hover:text-primary-container transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
 </header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 z-[60] hidden"></div>
+<!-- Mobile Menu Drawer -->
+<aside id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-72 bg-surface-container-lowest z-[70] flex flex-col p-6 gap-6 border-l border-outline-variant/30">
+  <div class="flex items-center justify-between">
+    <span class="text-lg font-bold text-primary">BeeQuery</span>
+    <button id="mobile-menu-close" class="p-1 text-on-surface-variant hover:text-on-surface" aria-label="Fechar">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-4 mt-4">
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#recursos">Recursos</a>
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#comparativo">Comparativo</a>
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#mentoria">Mentoria</a>
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#depoimentos">Depoimentos</a>
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#faq">FAQ</a>
+  </nav>
+  <a class="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary-container text-on-primary font-bold rounded-2xl btn-primary text-center"
+     href="/api/redirect/curso">
+    Garantir Meu Acesso
+  </a>
+</aside>
+
 <main>
-<!-- HERO SECTION (Desktop 2 Colunas) -->
-<section class="relative pt-12 pb-20 overflow-hidden border-b border-outline-variant/20">
-<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-container/10 via-transparent to-transparent pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-<!-- Coluna Esquerda: Conteúdo Estratégico -->
-<div class="lg:col-span-6 space-y-6">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/40">
-<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-<span class="font-label-sm text-label-sm text-primary">Power Query &amp; M-Engine - Excel Avançado</span>
-</div>
-<h1 class="font-display-lg text-display-lg tracking-tight text-on-surface">
-              Transforme Horas Manuais em Segundos de <span class="text-primary-container underline decoration-primary-container/40 underline-offset-8">Automação</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              Substitua PROCVs frágeis e planilhas lentas por pipelines resilientes com 1 clique. Domine a análise de dados corporativa no Excel sem decorar códigos infinitos.
+
+<!-- ═══════════════════════════════════════════════
+     HERO — Split Screen (Left Text, Right Terminal)
+     ═══════════════════════════════════════════════ -->
+<section id="hero" class="relative pt-28 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-container/8 via-transparent to-transparent pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Left: Content -->
+      <div class="lg:col-span-6 space-y-6">
+        <!-- Status badge -->
+        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-surface-container-high/80 border border-outline-variant/30">
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          <span class="text-xs font-mono text-primary tracking-wide">Power Query & M-Engine</span>
+        </div>
+
+        <h1 class="reveal reveal-d1 text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.08] text-on-surface">
+          Transforme Horas Manuais em Segundos de
+          <span class="text-primary-container">Automação</span>
+        </h1>
+
+        <p class="reveal reveal-d2 text-base lg:text-lg text-on-surface-variant leading-relaxed max-w-lg">
+          Substitua PROCVs frágeis e planilhas lentas por pipelines resilientes com 1 clique. Domine análise de dados corporativa no Excel.
+        </p>
+
+        <div class="reveal reveal-d3 flex flex-wrap items-center gap-4 pt-1">
+          <a class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary-container text-on-primary text-base font-bold rounded-2xl btn-primary"
+             href="/api/redirect/curso">
+            Garantir Meu Acesso
+          </a>
+          <a class="inline-flex items-center gap-2 px-5 py-3.5 bg-surface-container-low border border-outline-variant/30 text-on-surface text-sm font-semibold rounded-2xl btn-ghost hover:border-primary-container/50 hover:text-primary"
+             href="#ementa">
+            Ver Grade Curricular
+            <span class="material-symbols-outlined text-primary-container text-lg">arrow_downward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Terminal IDE Mockup -->
+      <div class="lg:col-span-6 reveal reveal-d2">
+        <div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-2xl shadow-black/40 overflow-hidden">
+          <!-- Header -->
+          <div class="flex items-center justify-between px-4 py-3 bg-surface-container border-b border-outline-variant/20">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-error/60"></div>
+              <div class="w-3 h-3 rounded-full bg-primary-container/60"></div>
+              <div class="w-3 h-3 rounded-full bg-primary/60"></div>
+              <span class="ml-2 text-[11px] font-mono text-on-surface-variant/70">pipeline_consolidacao.m</span>
+            </div>
+            <div class="flex items-center gap-2 px-2.5 py-0.5 rounded-2xl bg-primary-container/10 border border-primary-container/25">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              <span class="text-[11px] font-mono text-primary-container">1,2s de execução</span>
+            </div>
+          </div>
+          <!-- Code Body -->
+          <div class="p-5 font-mono text-[12px] leading-[1.65] space-y-1 overflow-x-auto text-on-surface">
+            <div class="code-comment select-none">// Consolidação automática sem macros ou VBA</div>
+            <div><span class="code-keyword">let</span></div>
+            <div class="pl-4"><span class="code-variable">Fonte</span> = Folder.Files(<span class="code-string">"C:\Relatorios\Matriz_Vendas"</span>),</div>
+            <div class="pl-4"><span class="code-variable">Parsed</span> = Table.AddColumn(<span class="code-variable">Fonte</span>, <span class="code-string">"Dados"</span>, <span class="code-keyword">each</span> Excel.Workbook([Content])),</div>
+            <div class="pl-4"><span class="code-variable">Filtrado</span> = Table.SelectRows(<span class="code-variable">Parsed</span>, <span class="code-keyword">each</span> ([Extension] = <span class="code-string">".xlsx"</span>)),</div>
+            <div class="pl-4"><span class="code-variable">Tabela</span> = Table.Combine(<span class="code-variable">Filtrado</span>[Dados])</div>
+            <div><span class="code-keyword">in</span></div>
+            <div class="pl-4"><span class="code-variable">Tabela</span></div>
+          </div>
+          <!-- Footer -->
+          <div class="flex items-center justify-between px-5 py-2.5 bg-surface-container-low border-t border-outline-variant/20 text-on-surface-variant text-[11px] font-mono">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+              <span>36 arquivos unificados em lote</span>
+            </div>
+            <span class="text-primary font-semibold">Economia: 14h/semana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TRUST STRIP — Social Proof + Metrics
+     ═══════════════════════════════════════════════ -->
+<section class="py-14 bg-surface-container-lowest border-b border-outline-variant/15">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <!-- Social proof row -->
+    <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+      <div class="flex text-primary-container">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+      </div>
+      <p class="text-sm text-on-surface-variant">
+        <strong class="text-on-surface font-semibold">4.9/5</strong> — Mais de 1.200 analistas e especialistas capacitados
+      </p>
+    </div>
+
+    <!-- Metrics grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-center card-hover">
+        <span class="block text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight"
+              data-target="10000" data-prefix="+" data-suffix="h" data-separator="true">+0h</span>
+        <span class="block text-sm font-semibold text-on-surface mt-1.5">Economizadas</span>
+        <span class="block text-xs text-on-surface-variant mt-0.5">Eficiência comprovada nos times</span>
+      </div>
+      <div class="reveal reveal-d1 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-center card-hover">
+        <span class="block text-3xl md:text-4xl font-extrabold text-primary tracking-tight"
+              data-target="100" data-suffix="%">0%</span>
+        <span class="block text-sm font-semibold text-on-surface mt-1.5">Sem Código VBA</span>
+        <span class="block text-xs text-on-surface-variant mt-0.5">Automação Nativa M-Engine</span>
+      </div>
+      <div class="reveal reveal-d2 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-center card-hover">
+        <span class="block text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight"
+              data-target="49" data-decimal="1" data-suffix=" ★">0 ★</span>
+        <span class="block text-sm font-semibold text-on-surface mt-1.5">Nota dos Alunos</span>
+        <span class="block text-xs text-on-surface-variant mt-0.5">Mais de 1.200 avaliações</span>
+      </div>
+      <div class="reveal reveal-d3 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-center card-hover">
+        <span class="block text-3xl md:text-4xl font-extrabold text-primary tracking-tight"
+              data-target="50" data-prefix="+">+0</span>
+        <span class="block text-sm font-semibold text-on-surface mt-1.5">Aulas Direto ao Ponto</span>
+        <span class="block text-xs text-on-surface-variant mt-0.5">Prática com bases reais de mercado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     COMPARATIVO — Side-by-side (No eyebrow)
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-background" id="comparativo">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">O Fim Definitivo das Planilhas Travando e Quebrando</h2>
+      <p class="text-base text-on-surface-variant mt-3 leading-relaxed">
+        Pare de ser refém de fórmulas instáveis. Compare a metodologia arcaica com o padrão de alto desempenho.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+      <!-- Card: Tradicional -->
+      <div class="reveal p-7 rounded-2xl bg-surface-container-low border border-error-container/30 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 pb-5 border-b border-outline-variant/20">
+            <span class="w-10 h-10 rounded-2xl bg-error-container/15 flex items-center justify-center text-error">
+              <span class="material-symbols-outlined">warning</span>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface">Como a maioria ainda faz</h3>
+              <span class="text-xs text-error font-medium">Processo frágil e improdutivo</span>
+            </div>
+          </div>
+          <ul class="space-y-5 mt-6">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error mt-0.5 shrink-0 text-lg">close</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">Copiar e colar abas manuais toda semana</strong>
+                <span class="text-sm text-on-surface-variant">Horas desperdiçadas abrindo 20 arquivos diferentes para juntar em uma base mestra que vive desformatando.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error mt-0.5 shrink-0 text-lg">close</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">PROCV lento gerando erros #N/D inesperados</strong>
+                <span class="text-sm text-on-surface-variant">Qualquer coluna inserida inadvertidamente corrompe o cálculo e invalida o fechamento de diretoria.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error mt-0.5 shrink-0 text-lg">close</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">Planilhas pesadas travando a máquina ao salvar</strong>
+                <span class="text-sm text-on-surface-variant">Arquivos de mais de 100MB que consomem 100% da CPU e forçam o Excel a reiniciar sem aviso.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-outline-variant/15 text-center text-xs font-mono text-on-surface-variant">
+          Resultado: Estresse contínuo, horas extras e risco de relatórios incorretos.
+        </div>
+      </div>
+
+      <!-- Card: BeeQuery -->
+      <div class="reveal reveal-d1 p-7 rounded-2xl bg-surface-container border-2 border-primary-container/60 glow-amber flex flex-col justify-between relative">
+        <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-2xl bg-primary-container text-on-primary text-[11px] font-bold uppercase tracking-wider">
+          Padrão BeeQuery
+        </div>
+        <div>
+          <div class="flex items-center gap-3 pb-5 border-b border-outline-variant/20">
+            <span class="w-10 h-10 rounded-2xl bg-primary-container/15 flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined">bolt</span>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-primary">Com a BeeQuery: 50x mais rápido</h3>
+              <span class="text-xs text-primary-container font-medium">Pipeline resiliente com 1 clique</span>
+            </div>
+          </div>
+          <ul class="space-y-5 mt-6">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0 text-lg">check_circle</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">1 Clique: pasta inteira consolidada automaticamente</strong>
+                <span class="text-sm text-on-surface-variant">Basta jogar o novo arquivo na pasta do mês e clicar em Atualizar Tudo. Toda unificação é instantânea.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0 text-lg">check_circle</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">Zero Erros: tipos de dados e nulos tratados na origem</strong>
+                <span class="text-sm text-on-surface-variant">Tipagem estrita (inteiro, texto, data) e substituição algorítmica garantem integridade total aos dados.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0 text-lg">check_circle</span>
+              <div>
+                <strong class="text-sm font-semibold text-on-surface block">Leveza: sem sobrecarregar a memória RAM corporativa</strong>
+                <span class="text-sm text-on-surface-variant">O motor VertiPaq/M-Engine comprime os dados em até 10x, mantendo a planilha leve e ágil.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6 pt-4 border-t border-outline-variant/20 text-center text-xs font-mono text-primary">
+          Resultado: Fechamento em minutos, confiança executiva e visibilidade técnica imediata.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     RECURSOS — Bento Grid (1 eyebrow allowed)
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-surface-container-lowest" id="recursos">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <span class="text-[11px] font-mono uppercase tracking-[0.18em] text-primary-container">Especialização Técnica</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface mt-2 tracking-tight">O Que Você Vai Dominar na Prática</h2>
+      <p class="text-base text-on-surface-variant mt-3 leading-relaxed">
+        Conhecimento pragmático para os cenários reais mais agressivos do mercado corporativo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <!-- Card 1: ETL (col-span-8, tinted bg) -->
+      <div class="reveal lg:col-span-8 p-7 rounded-2xl bg-gradient-to-br from-surface-container-low to-surface-container border border-outline-variant/20 card-hover group relative overflow-hidden flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">cleaning_services</span>
+            </div>
+            <div class="flex items-center gap-2 px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary font-mono text-[11px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              ETL Nativo &amp; Resiliente
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-on-surface">ETL e Limpeza de Dados sem Código</h3>
+            <p class="text-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">
+              Aprenda a tratar layouts complexos de ERPs (SAP, TOTVS, Protheus), dividindo colunas, transpondo matrizes sujas e desdinamizando tabelas (unpivot) com facilidade cirúrgica.
             </p>
-<div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="inline-flex items-center gap-2.5 px-6 py-3.5 bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded-lg font-bold hover:bg-primary transition-all duration-200 glow-amber-accent active:scale-[0.98] animate-pulse" href="/api/redirect/curso">
-<span class="">Garantir Acesso Imediato ⚡</span>
-</a>
-<a class="inline-flex items-center gap-2 px-5 py-3.5 bg-surface-container-low border border-outline-variant/40 text-on-surface rounded-lg font-title-md text-title-md hover:border-primary-container hover:text-primary transition-all duration-200" href="#ementa">
-<span class="">Ver Grade Curricular</span>
-<span class="material-symbols-outlined text-primary-container" data-icon="arrow_downward">arrow_downward</span>
-</a>
-</div>
-<!-- Prova Social Hero -->
-<div class="pt-4 flex items-center gap-4 border-t border-outline-variant/20">
-<div class="flex text-primary-container">
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-<strong class="text-on-surface font-title-md">4.9/5</strong> • Mais de 1.200 analistas e especialistas capacitados
-              </p>
-</div>
-</div>
-<!-- Coluna Direita: Terminal IDE Mockup M-Code -->
-<div class="lg:col-span-6">
-<div class="rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-2xl overflow-hidden">
-<!-- Header IDE -->
-<div class="flex items-center justify-between px-4 py-3 bg-surface-container border-b border-outline-variant/30">
-<div class="flex items-center space-x-2">
-<div class="w-3 h-3 rounded-full bg-error/70"></div>
-<div class="w-3 h-3 rounded-full bg-primary-container/70"></div>
-<div class="w-3 h-3 rounded-full bg-primary/70"></div>
-<span class="ml-2 font-label-sm text-label-sm text-on-surface-variant/80">pipeline_consolidacao.m</span>
-</div>
-<div class="flex items-center gap-2 px-2 py-0.5 rounded bg-primary-container/10 border border-primary-container/30">
-<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-<span class="font-label-sm text-label-sm text-primary-container font-mono">1,2s de execução</span>
-</div>
-</div>
-<!-- Body Code Editor -->
-<div class="p-5 font-code-snippet text-code-snippet space-y-1.5 overflow-x-auto text-on-surface">
-<div class="text-outline-variant italic select-none">// Consolidação automática sem macros ou VBA</div>
-<div><span class="text-primary-container font-semibold">let</span></div>
-<div class="pl-4">
-<span class="text-tertiary font-semibold">Fonte</span> = Folder.Files(<span class="text-primary font-mono">"C:\Relatorios\Matriz_Vendas"</span>),
-                </div>
-<div class="pl-4">
-<span class="text-tertiary font-semibold">Parsed</span> = Table.AddColumn(<span class="text-tertiary">Fonte</span>, <span class="text-primary">"Dados"</span>, <span class="text-primary-container font-semibold">each</span> Excel.Workbook([Content])),
-                </div>
-<div class="pl-4">
-<span class="text-tertiary font-semibold">Filtrado</span> = Table.SelectRows(<span class="text-tertiary">Parsed</span>, <span class="text-primary-container font-semibold">each</span> ([Extension] = <span class="text-primary">".xlsx"</span>)),
-                </div>
-<div class="pl-4">
-<span class="text-tertiary font-semibold">Tabela</span> = Table.Combine(<span class="text-tertiary">Filtrado</span>[Dados])
-                </div>
-<div><span class="text-primary-container font-semibold">in</span></div>
-<div class="pl-4"><span class="text-tertiary font-semibold">Tabela</span></div>
-</div>
-<!-- Rodapé da Janela IDE -->
-<div class="flex items-center justify-between px-5 py-3 bg-surface-container-low border-t border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
-<span class="">36 arquivos unificados em lote</span>
-</div>
-<div class="text-primary font-semibold">
-                  Economia calculada: 14h / semana
-                </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- GRID DE MÉTRICAS DE IMPACTO (4 Colunas) -->
-<section class="py-12 bg-surface-container-lowest border-b border-outline-variant/20">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center flex flex-col items-center">
-<span class="font-display-lg text-display-lg font-bold text-primary-container">+10.000h</span>
-<span class="font-title-md text-title-md text-on-surface mt-1">Economizadas</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Eficiência comprovada nos times</span>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center flex flex-col items-center">
-<span class="font-display-lg text-display-lg font-bold text-primary">100%</span>
-<span class="font-title-md text-title-md text-on-surface mt-1">Sem Código VBA</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Automação Nativa M-Engine</span>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center flex flex-col items-center">
-<span class="font-display-lg text-display-lg font-bold text-primary-container">4.9 ★</span>
-<span class="font-title-md text-title-md text-on-surface mt-1">Nota dos Alunos</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Avaliação em mais de 1.200 reviews</span>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center flex flex-col items-center">
-<span class="font-display-lg text-display-lg font-bold text-primary">+50</span>
-<span class="font-title-md text-title-md text-on-surface mt-1">Aulas Direto ao Ponto</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Prática com bases reais de mercado</span>
-</div>
-</div>
-</div>
-</section>
-<!-- SEÇÃO COMPARATIVA: "O Fim das Planilhas Quebrando" -->
-<section class="py-20 bg-background border-b border-outline-variant/20" id="comparativo">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Diagnóstico de Performance</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">O Fim Definitivo das Planilhas Travando e Quebrando</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
-            Pare de ser refém de fórmulas instáveis. Compare a metodologia arcaica com o padrão corporativo de alto desempenho da BeeQuery.
-          </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-<!-- Card 1: Processo Tradicional / Caótico -->
-<div class="p-8 rounded-xl bg-surface-container-low border border-error-container/40 flex flex-col justify-between">
-<div>
-<div class="flex items-center gap-3 pb-6 border-b border-outline-variant/30">
-<span class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
-<span class="material-symbols-outlined" data-icon="warning">warning</span>
-</span>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Como a maioria ainda faz</h3>
-<span class="font-body-sm text-body-sm text-error">Processo frágil e improdutivo</span>
-</div>
-</div>
-<ul class="space-y-5 mt-6">
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-error mt-0.5 shrink-0" data-icon="close">close</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Copiar e colar abas manuais toda semana</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">Horas desperdiçadas abrindo 20 arquivos diferentes para juntar em uma base mestra que vive desformatando.</span>
-</div>
-</li>
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-error mt-0.5 shrink-0" data-icon="close">close</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">PROCV lento gerando erros #N/D inesperados</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">Qualquer coluna inserida inadvertidamente corrompe o cálculo e invalida o fechamento de diretoria.</span>
-</div>
-</li>
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-error mt-0.5 shrink-0" data-icon="close">close</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Planilhas pesadas travando a máquina ao salvar</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">Arquivos de mais de 100MB que consom 100% da CPU e forçam o Excel a reiniciar sem aviso.</span>
-</div>
-</li>
-</ul>
-</div>
-<div class="mt-8 pt-4 border-t border-outline-variant/20 text-center font-label-sm text-label-sm text-on-surface-variant">
-              Resultado: Estresse contínuo, horas extras e risco de demissão por relatórios incorretos.
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-outline-variant/15 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Unpivot Dinâmico</span>
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Normalização</span>
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Split de Colunas</span>
+          </div>
+          <span class="text-outline font-mono text-[11px]">Table.TransformColumns(...)</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Consolidação (col-span-4) -->
+      <div class="reveal reveal-d1 lg:col-span-4 p-7 rounded-2xl bg-surface-container-low border border-outline-variant/20 card-hover group flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-11 h-11 rounded-2xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">folder_zip</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-on-surface">Consolidação Dinâmica em Lote</h3>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Estruture pastas inteligentes que leem automaticamente dezenas de arquivos XLSX, CSV ou TXT. O pipeline reconhece novas adições e atualiza a base inteira automaticamente.
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-outline-variant/15 flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Folder.Files</span>
+          <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Múltiplas Extensões</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Linguagem M (col-span-4, accent tint) -->
+      <div class="reveal reveal-d2 lg:col-span-4 p-7 rounded-2xl bg-primary-container/5 border border-primary-container/20 card-hover group flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-11 h-11 rounded-2xl bg-primary-container/15 border border-primary-container/25 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">terminal</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-on-surface">Linguagem M Descomplicada</h3>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Desmistifique a sintaxe avançada do Power Query. Crie parâmetros dinâmicos, funções customizadas reutilizáveis e domine o controle condicional de fluxo.
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-outline-variant/15 flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Custom Functions</span>
+          <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Parâmetros</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Templates (col-span-8) -->
+      <div class="reveal reveal-d3 lg:col-span-8 p-7 rounded-2xl bg-surface-container-low border border-outline-variant/20 card-hover group relative overflow-hidden flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">library_books</span>
             </div>
-</div>
-<!-- Card 2: Metodologia BeeQuery -->
-<div class="p-8 rounded-xl bg-surface-container border-2 border-primary-container/70 shadow-lg glow-amber-accent flex flex-col justify-between relative">
-<div class="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              Padrão BeeQuery
+            <div class="flex items-center gap-2 px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary font-mono text-[11px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Copy &amp; Paste Library
             </div>
-<div>
-<div class="flex items-center gap-3 pb-6 border-b border-outline-variant/30">
-<span class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-</span>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Com a BeeQuery: 50x mais rápido</h3>
-<span class="font-body-sm text-body-sm text-primary-container font-medium">Pipeline resiliente com 1 clique</span>
-</div>
-</div>
-<ul class="space-y-5 mt-6">
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0" data-icon="check_circle">check_circle</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">1 Clique: pasta inteira consolidada automaticamente</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">Basta jogar o novo arquivo na pasta do mês e clicar em Atualizar Tudo. Toda unificação é instantânea.</span>
-</div>
-</li>
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0" data-icon="check_circle">check_circle</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Zero Erros: tipos de dados e nulos tratados na origem</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">Tipagem estrita (inteiro, texto, data) e substituição algorítmica garantem integridade total aos dados.</span>
-</div>
-</li>
-<li class="flex items-start gap-3.5">
-<span class="material-symbols-outlined text-primary-container mt-0.5 shrink-0" data-icon="check_circle">check_circle</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Leveza: sem sobrecarregar a memória RAM corporativa</strong>
-<span class="font-body-md text-body-md text-on-surface-variant">O motor VertiPaq/M-Engine comprime os dados em até 10x, mantendo a planilha leve e ágil.</span>
-</div>
-</li>
-</ul>
-</div>
-<div class="mt-8 pt-4 border-t border-outline-variant/30 text-center font-label-sm text-label-sm text-primary">
-              Resultado: Fechamento em minutos, confiança executiva e visibilidade técnica imediata.
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-on-surface">Templates e Scripts Prontos</h3>
+            <p class="text-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">
+              Acesso à biblioteca com scripts prontos para copiar e colar: d_Calendario dinâmica universal, conectores de API REST, desduplicadores avançados e templates de auditoria fiscal.
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-outline-variant/15 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">d_Calendario M</span>
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">Code Snippets</span>
+            <span class="px-2.5 py-1 rounded-2xl bg-surface-container border border-outline-variant/20 font-mono text-[11px] text-primary">REST Connectors</span>
+          </div>
+          <span class="text-outline font-mono text-[11px]">List.Generate(...)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     GRADE CURRICULAR — Accordion + Sidebar
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-background" id="ementa">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Grade Curricular Oficial BeeQuery</h2>
+      <p class="text-base text-on-surface-variant mt-3 leading-relaxed">
+        Passo a passo, da ambientação inicial à análise de dados e automação avançada com M-Engine.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
+      <!-- Modules Accordion -->
+      <div class="lg:col-span-8 accordion-group space-y-3">
+
+        <!-- Módulo 1 -->
+        <div class="reveal rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden card-hover">
+          <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-[11px] px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary-container font-semibold">01</span>
+              <h3 class="text-sm font-bold text-on-surface">Fundamentos &amp; Interface do Power Query</h3>
             </div>
-</div>
-</div>
-</div>
-</section>
-<!-- BENTO GRID / RECURSOS: "O que você vai dominar" -->
-<section class="py-20 bg-surface-container-lowest border-b border-outline-variant/20" id="recursos">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Especialização Técnica</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">O Que Você Vai Dominar na Prática</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
-            Conhecimento pragmático desenvolvido para os cenários reais mais agressivos do mercado corporativo.
-          </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-  <!-- Card 1 (Wider Bento: col-span-8) - ETL e Limpeza de Dados sem Código -->
-  <div class="lg:col-span-8 p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-200 group relative overflow-hidden flex flex-col justify-between">
-    <div class="space-y-4">
-      <div class="flex items-center justify-between">
-        <div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-          <span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
-        </div>
-        <div class="flex items-center gap-2 px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary font-mono text-label-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-          <span class="">ETL Nativo &amp; Resiliente</span>
-        </div>
-      </div>
-      <div>
-        <h3 class="font-headline-sm text-headline-sm text-on-surface">ETL e Limpeza de Dados sem Código</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">
-          Aprenda a tratar layouts complexos de ERPs (SAP, TOTVS, Protheus), dividindo colunas, transpondo matrizes sujas e desdinamizando tabelas (unpivot) com facilidade cirúrgica.
-        </p>
-      </div>
-    </div>
-    <div class="mt-6 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex flex-wrap gap-2">
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Unpivot Dinâmico</span>
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Normalização</span>
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Split de Colunas</span>
-      </div>
-      <span class="text-outline-variant text-label-sm font-mono">Table.TransformColumns(...)</span>
-    </div>
-  </div>
-
-  <!-- Card 2 (Narrower Bento: col-span-4) - Consolidação Dinâmica em Lote -->
-  <div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-200 group flex flex-col justify-between">
-    <div class="space-y-4">
-      <div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined" data-icon="folder_zip">folder_zip</span>
-      </div>
-      <div>
-        <h3 class="font-headline-sm text-headline-sm text-on-surface">Consolidação Dinâmica em Lote (Batch)</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-          Estruture pastas inteligentes que leem automaticamente dezenas de arquivos XLSX, CSV ou TXT. O pipeline reconhece novas adições e atualiza a base inteira sem você precisar mexer em nada.
-        </p>
-      </div>
-    </div>
-    <div class="mt-6 pt-4 border-t border-outline-variant/20 flex flex-wrap gap-2">
-      <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Folder.Files</span>
-      <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Múltiplas Extensões</span>
-    </div>
-  </div>
-
-  <!-- Card 3 (Narrower Bento: col-span-4) - Linguagem M Descomplicada -->
-  <div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-200 group flex flex-col justify-between">
-    <div class="space-y-4">
-      <div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-      </div>
-      <div>
-        <h3 class="font-headline-sm text-headline-sm text-on-surface">Linguagem M Descomplicada</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-          Desmistifique a sintaxe avançada do Power Query. Crie parâmetros operacionais dinâmicos, crie funções customizadas reutilizáveis e domine o controle condicional de fluxo.
-        </p>
-      </div>
-    </div>
-    <div class="mt-6 pt-4 border-t border-outline-variant/20 flex flex-wrap gap-2">
-      <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Custom Functions</span>
-      <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Parâmetros</span>
-    </div>
-  </div>
-
-  <!-- Card 4 (Wider Bento: col-span-8) - Templates e Scripts Prontos -->
-  <div class="lg:col-span-8 p-8 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-200 group relative overflow-hidden flex flex-col justify-between">
-    <div class="space-y-4">
-      <div class="flex items-center justify-between">
-        <div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-          <span class="material-symbols-outlined" data-icon="library_books">library_books</span>
-        </div>
-        <div class="flex items-center gap-2 px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary font-mono text-label-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-          <span class="">Copy &amp; Paste Library</span>
-        </div>
-      </div>
-      <div>
-        <h3 class="font-headline-sm text-headline-sm text-on-surface">Templates e Scripts Prontos</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">
-          Acesso à biblioteca com scripts prontos para copiar e colar: d_Calendario dinâmica universal, conectores de API REST, desduplicadores avançados e templates de auditoria fiscal.
-        </p>
-      </div>
-    </div>
-    <div class="mt-6 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex flex-wrap gap-2">
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">d_Calendario M</span>
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">Code Snippets</span>
-        <span class="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/30 font-label-sm text-label-sm text-primary">REST Connectors</span>
-      </div>
-      <span class="text-outline-variant text-label-sm font-mono">List.Generate(...)</span>
-    </div>
-  </div>
-</div>
-
-
-        </div>
-</section>
-<!-- GRADE CURRICULAR OFICIAL (Desktop Estruturado 2 Colunas) -->
-<section class="py-20 bg-background border-b border-outline-variant/20" id="ementa">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Conteúdo Programático</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Grade Curricular Oficial BeeQuery</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
-            Passo a passo, da ambientação inicial à análise de dados e automação avançada com M-Engine.
-          </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<!-- Lista de Módulos (8 Colunas) -->
-<div class="lg:col-span-8 space-y-4">
-<!-- Módulo 1 -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 01</span>
-<h3 class="font-title-md text-title-md text-on-surface">Fundamentos &amp; Interface do Power Query</h3>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">8 Aulas</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-on-surface-variant">8 Aulas</span>
+              <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg">expand_more</span>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-5 border-t border-outline-variant/15">
+              <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
                 Conceito de ETL corporativo, conexão de fontes heterogêneas, tipagem preventiva de dados, etapas aplicadas e preservação das bases originais sem corrupção de arquivos.
               </p>
-</div>
-<!-- Módulo 2 -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 02</span>
-<h3 class="font-title-md text-title-md text-on-surface">Transformações Essenciais &amp; Modelagem</h3>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">12 Aulas</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 2 -->
+        <div class="reveal reveal-d1 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden card-hover">
+          <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-[11px] px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary-container font-semibold">02</span>
+              <h3 class="text-sm font-bold text-on-surface">Transformações Essenciais &amp; Modelagem</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-on-surface-variant">12 Aulas</span>
+              <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg">expand_more</span>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-5 border-t border-outline-variant/15">
+              <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
                 Mesclar consultas (o substituto definitivo e performático do PROCV), acrescentar tabelas, transposição avançada, unpivot de matrizes contábeis e limpeza de caracteres invisíveis.
               </p>
-</div>
-<!-- Módulo 3 -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 03</span>
-<h3 class="font-title-md text-title-md text-on-surface">Consolidação em Lote &amp; Pastas Dinâmicas</h3>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">10 Aulas</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 3 -->
+        <div class="reveal reveal-d2 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden card-hover">
+          <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-[11px] px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary-container font-semibold">03</span>
+              <h3 class="text-sm font-bold text-on-surface">Consolidação em Lote &amp; Pastas Dinâmicas</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-on-surface-variant">10 Aulas</span>
+              <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg">expand_more</span>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-5 border-t border-outline-variant/15">
+              <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
                 Automatizando pastas inteiras de fechamento mensal. Padronização de esquemas variáveis, tratamento de colunas em ordens diferentes e arquivos corrompidos no fluxo.
               </p>
-</div>
-<!-- Módulo 4 -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 04</span>
-<h3 class="font-title-md text-title-md text-on-surface">Linguagem M Descomplicada</h3>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">11 Aulas</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 4 -->
+        <div class="reveal reveal-d3 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden card-hover">
+          <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-[11px] px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary-container font-semibold">04</span>
+              <h3 class="text-sm font-bold text-on-surface">Linguagem M Descomplicada</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-on-surface-variant">11 Aulas</span>
+              <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg">expand_more</span>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-5 border-t border-outline-variant/15">
+              <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
                 A structure Let...In, tipos de dados primitivos vs estruturas (List, Record, Table), criação de parâmetros dinâmicos de data e funções personalizadas invocadas por linha.
               </p>
-</div>
-<!-- Módulo 5 -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/40 transition-all">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="font-label-md text-label-md px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-primary-container font-mono">MÓDULO 05</span>
-<h3 class="font-title-md text-title-md text-on-surface">Casos Reais de Mercado (Logística, Indústria, Finanças)</h3>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">9 Aulas Práticas</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo 5 -->
+        <div class="reveal reveal-d4 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden card-hover">
+          <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-[11px] px-2.5 py-1 rounded-2xl bg-primary-container/8 border border-primary-container/20 text-primary-container font-semibold">05</span>
+              <h3 class="text-sm font-bold text-on-surface">Casos Reais de Mercado</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-on-surface-variant">9 Aulas</span>
+              <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg">expand_more</span>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-5 border-t border-outline-variant/15">
+              <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
                 Resolução ponta a ponta de desafios enviados por grandes corporações: conciliação bancária massiva, consolidação de fretes de 50 transportadoras e auditoria de estoque.
               </p>
-</div>
-</div>
-<!-- Card Lateral de Bônus Especial (4 Colunas) -->
-<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-high border-2 border-primary-container/50 space-y-6">
-<div class="flex items-center gap-2 text-primary-container">
-<span class="material-symbols-outlined" data-icon="stars">stars</span>
-<span class="font-label-md text-label-md uppercase tracking-wider font-bold">Pacote Exclusivo de Bônus</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Incluso Gratuitamente na Sua Matrícula:</h3>
-<div class="space-y-4">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="all_inclusive">all_inclusive</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Acesso Vitalício</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Acesse sempre que precisar consultar templates e novas atualizações da ferramenta.</span>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="forum">forum</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Comunidade Fechada BeeQuery</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Tire dúvidas de casos complexos da sua empresa diretamente com instrutores e especialistas.</span>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-container shrink-0" data-icon="verified">verified</span>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Certificado Oficial com Validação</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Comprovação de horas técnicas e código de autenticidade para enriquecer seu LinkedIn.</span>
-</div>
-</div>
-</div>
-<div class="pt-4 border-t border-outline-variant/30">
-<a class="w-full inline-flex justify-center items-center py-3 px-4 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg font-bold hover:bg-primary transition-all" href="/api/redirect/curso">
-                Garantir Bônus e Vaga
-              </a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- DEPOIMENTOS DOS ALUNOS -->
-<section class="py-20 bg-surface-container-lowest border-b border-outline-variant/20" id="depoimentos">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Casos de Sucesso</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Quem Aprendeu a Metodologia Recomenda</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
-            Veja o impacto da metodologia BeeQuery no dia a dia operacional de analistas e líderes.
-          </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Review 1: Rodrigo Mendonça -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
-<div>
-<div class="flex text-primary-container mb-3">
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-                "Reduzi o fechamento do nosso time de BI de 3 dias para apenas 20 minutos. O método do Power Query ensinado aqui é direto ao ponto e focado na dor real de planilhas lentas."
-              </p>
-</div>
-<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-headline-sm font-bold">
-                RM
-              </div>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Rodrigo Mendonça</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Coordenador de BI Corporativo</span>
-</div>
-</div>
-</div>
-<!-- Review 2: Larissa Nogueira -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
-<div>
-<div class="flex text-primary-container mb-3">
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-                "Eu gastava todas as minhas segundas-feiras unindo arquivos CSV de 12 filiais. Hoje a pasta inteira é atualizada com um simples clique no Excel. Recuperei meu tempo e qualidade de vida."
-              </p>
-</div>
-<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-headline-sm font-bold">
-                LN
-              </div>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Larissa Nogueira</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Especialista de Controladoria &amp; Finanças</span>
-</div>
-</div>
-</div>
-<!-- Review 3: Carlos Eduardo Pires -->
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
-<div>
-<div class="flex text-primary-container mb-3">
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-                "O módulo de Linguagem M abriu minha mente para automação real. Nunca mais precisei de macros VBA problemáticas que ninguém da equipe conseguia dar manutenção."
-              </p>
-</div>
-<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-headline-sm font-bold">
-                CP
-              </div>
-<div>
-<strong class="font-title-md text-title-md text-on-surface block">Carlos Eduardo Pires</strong>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Gerente de Supply Chain &amp; Logística</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CARD DE OFERTA & CHECKOUT: "Comece Hoje Sem Risco" -->
-<section class="py-20 bg-background border-b border-outline-variant/20" id="checkout">
-<div class="max-w-4xl mx-auto px-6 lg:px-8">
-<div class="p-8 md:p-12 rounded-2xl bg-surface-container border-2 border-primary-container shadow-2xl relative overflow-hidden glow-amber-accent">
-<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="text-center space-y-4">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/20 border border-primary-container/40">
-<span class="material-symbols-outlined text-primary-container text-sm" data-icon="verified_user">verified_user</span>
-<span class="font-label-sm text-label-sm text-primary font-semibold">Garantia Incondicional de 7 Dias</span>
-</div>
-<h2 class="font-display-lg text-display-lg text-on-surface">Comece Hoje Sem Risco Algum</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
-              Se em até 7 dias você não sentir que suas rotinas de dados estão infinitamente mais rápidas, devolvemos 100% do seu investimento.
-            </p>
-<!-- Box de Preço -->
-<div class="py-6 my-4 bg-surface-container-lowest/80 rounded-xl border border-outline-variant/40 inline-block px-8">
-<span class="font-body-md text-body-md text-on-surface-variant line-through block">De R$ 149,90</span>
-<div class="flex items-baseline justify-center gap-2 mt-1">
-<span class="font-body-lg text-body-lg text-on-surface-variant"></span>
-<span class="font-display-lg text-display-lg font-bold text-primary-container">R$ 79,90</span>
-</div>
-<span class="font-body-sm text-body-sm text-primary mt-1 block">Acesso vitalício</span>
-</div>
-<div>
-<a class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded-xl font-bold hover:bg-primary transition-all duration-200 active:scale-[0.98] shadow-lg" href="/api/redirect/curso">
-<span class="">Garantir Vaga com Desconto</span>
-<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-<!-- Selos de Segurança -->
-<div class="pt-8 border-t border-outline-variant/30 flex flex-wrap items-center justify-center gap-8 text-on-surface-variant font-label-sm text-label-sm">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="lock">lock</span>
-<span class="">Pagamento 100% SEGURO</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="bolt">bolt</span>
-<span class="">Acesso Imediato</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="workspace_premium">workspace_premium</span>
-<span class="">Certificado Oficial Incluso</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-    <section id="mentoria" class="py-20 bg-background border-b border-outline-variant/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-outline-variant/20">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-primary font-semibold tracking-wider uppercase text-sm mb-2 block">Procurando algo além do curso?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-4">Conheça nossa Mentoria Exclusiva</h2>
-                <p class="text-lg text-on-surface-variant">
-                    Mais do que aulas gravadas. Um acompanhamento lado a lado para garantir que você atinja seus objetivos e revolucione sua carreira.
-                </p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-surface-container border border-outline-variant/30 p-8 rounded-2xl flex flex-col items-center text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary-container mb-4">person_search</span>
-                    <h3 class="text-xl font-bold text-on-surface mb-3">Acompanhamento 1-on-1</h3>
-                    <p class="text-on-surface-variant text-sm">
-                        Análise individual do seu perfil e das suas dificuldades. Traçamos a melhor rota para o seu aprendizado exclusivo.
-                    </p>
-                </div>
-                <div class="bg-surface-container border border-outline-variant/30 p-8 rounded-2xl flex flex-col items-center text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary-container mb-4">trending_up</span>
-                    <h3 class="text-xl font-bold text-on-surface mb-3">Plano de Carreira Personalizado</h3>
-                    <p class="text-on-surface-variant text-sm">
-                        Orientação focada no seu mercado de atuação. Descubra como aplicar o Power Query no seu dia a dia profissional.
-                    </p>
-                </div>
-                <div class="bg-surface-container border border-outline-variant/30 p-8 rounded-2xl flex flex-col items-center text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary-container mb-4">forum</span>
-                    <h3 class="text-xl font-bold text-on-surface mb-3">Contato Direto</h3>
-                    <p class="text-on-surface-variant text-sm">
-                        Canal direto para tirar dúvidas sobre projetos reais da sua empresa, garantindo que você nunca fique travado.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center gap-4">
-                <a href="/api/redirect/whatsapp" class="animate-pulse inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all shadow-lg hover:shadow-primary-container/20 hover:-translate-y-1">
-                    <span class="material-symbols-outlined">chat</span>
-                    Quero saber mais sobre a Mentoria
-                </a>
-            </div>
+          </div>
         </div>
-    </section>
-    
-<!-- FAQ INTERATIVO EM 2 COLUNAS -->
-<section class="py-20 bg-surface-container-lowest border-b border-outline-variant/20" id="faq">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container">Dúvidas Frequentes</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Perguntas Frequentes (FAQ)</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
-            Tudo o que você precisa saber sobre a metodologia BeeQuery e o formato do curso.
+      </div>
+
+      <!-- Sidebar: Bônus -->
+      <div class="reveal lg:col-span-4 p-7 rounded-2xl bg-surface-container-high border-2 border-primary-container/40 space-y-6 lg:sticky lg:top-24">
+        <div class="flex items-center gap-2 text-primary-container">
+          <span class="material-symbols-outlined">stars</span>
+          <span class="text-xs font-bold uppercase tracking-wider">Pacote Exclusivo de Bônus</span>
+        </div>
+        <h3 class="text-lg font-bold text-on-surface">Incluso na Sua Matrícula:</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container shrink-0">all_inclusive</span>
+            <div>
+              <strong class="text-sm font-semibold text-on-surface block">Acesso Vitalício</strong>
+              <span class="text-xs text-on-surface-variant">Acesse sempre que precisar consultar templates e novas atualizações da ferramenta.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container shrink-0">forum</span>
+            <div>
+              <strong class="text-sm font-semibold text-on-surface block">Comunidade Fechada BeeQuery</strong>
+              <span class="text-xs text-on-surface-variant">Tire dúvidas de casos complexos da sua empresa diretamente com instrutores e especialistas.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-container shrink-0">verified</span>
+            <div>
+              <strong class="text-sm font-semibold text-on-surface block">Certificado Oficial com Validação</strong>
+              <span class="text-xs text-on-surface-variant">Comprovação de horas técnicas e código de autenticidade para enriquecer seu LinkedIn.</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-outline-variant/20">
+          <a class="w-full inline-flex justify-center items-center py-3 px-4 bg-primary-container text-on-primary text-sm font-bold rounded-2xl btn-primary"
+             href="/api/redirect/curso">
+            Garantir Meu Acesso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     DEPOIMENTOS — Featured + 2 Smaller
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-surface-container-lowest" id="depoimentos">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Quem Aprendeu a Metodologia Recomenda</h2>
+      <p class="text-base text-on-surface-variant mt-3 leading-relaxed">
+        Veja o impacto da metodologia BeeQuery no dia a dia operacional de analistas e líderes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-5">
+      <!-- Featured testimonial (larger) -->
+      <div class="reveal lg:col-span-3 p-8 rounded-2xl bg-surface-container border-2 border-primary-container/30 glow-amber flex flex-col justify-between">
+        <div>
+          <div class="flex text-primary-container mb-4 gap-0.5">
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-base lg:text-lg text-on-surface leading-relaxed italic">
+            &ldquo;Reduzi o fechamento do nosso time de BI de 3 dias para apenas 20 minutos. O método do Power Query ensinado aqui é direto ao ponto e focado na dor real de planilhas lentas.&rdquo;
           </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-2">
-<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="help">help</span>
-              Preciso saber programar antes?
-            </h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+        </div>
+        <div class="pt-6 mt-6 border-t border-outline-variant/15 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-primary-container/15 text-primary-container flex items-center justify-center text-sm font-bold">
+            RM
+          </div>
+          <div>
+            <strong class="text-sm font-semibold text-on-surface block">Rodrigo Mendonça</strong>
+            <span class="text-xs text-on-surface-variant">Coordenador de BI Corporativo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two stacked testimonials -->
+      <div class="lg:col-span-2 flex flex-col gap-5">
+        <!-- Review 2 -->
+        <div class="reveal reveal-d1 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between flex-1 card-hover">
+          <div>
+            <div class="flex text-primary-container mb-3 gap-0.5">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-sm text-on-surface italic leading-relaxed">
+              &ldquo;Eu gastava todas as segundas-feiras unindo arquivos CSV de 12 filiais. Hoje a pasta inteira é atualizada com um clique.&rdquo;
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary-container flex items-center justify-center text-xs font-bold">
+              LN
+            </div>
+            <div>
+              <strong class="text-sm font-semibold text-on-surface block">Larissa Nogueira</strong>
+              <span class="text-xs text-on-surface-variant">Especialista de Controladoria</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal reveal-d2 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between flex-1 card-hover">
+          <div>
+            <div class="flex text-primary-container mb-3 gap-0.5">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-sm text-on-surface italic leading-relaxed">
+              &ldquo;O módulo de Linguagem M abriu minha mente para automação real. Nunca mais precisei de macros VBA problemáticas.&rdquo;
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary-container flex items-center justify-center text-xs font-bold">
+              CP
+            </div>
+            <div>
+              <strong class="text-sm font-semibold text-on-surface block">Carlos Eduardo Pires</strong>
+              <span class="text-xs text-on-surface-variant">Gerente de Supply Chain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CHECKOUT — Clean Offer Card
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-background" id="checkout">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="reveal p-8 md:p-12 rounded-2xl bg-surface-container border border-primary-container/40 relative overflow-hidden">
+      <!-- Subtle glow -->
+      <div class="absolute -top-16 -right-16 w-56 h-56 bg-primary-container/6 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="text-center space-y-5 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-primary-container/12 border border-primary-container/25">
+          <span class="material-symbols-outlined text-primary-container text-sm">verified_user</span>
+          <span class="text-xs font-mono text-primary font-semibold">Garantia Incondicional de 7 Dias</span>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Comece Hoje Sem Risco Algum</h2>
+        <p class="text-base text-on-surface-variant max-w-lg mx-auto leading-relaxed">
+          Se em até 7 dias você não sentir que suas rotinas de dados estão infinitamente mais rápidas, devolvemos 100% do seu investimento.
+        </p>
+
+        <!-- Price -->
+        <div class="py-5 my-2 bg-surface-container-lowest/60 rounded-2xl border border-outline-variant/20 inline-block px-8">
+          <span class="block text-sm text-on-surface-variant line-through">De R$ 149,90</span>
+          <span class="block text-3xl md:text-4xl font-extrabold text-primary-container mt-1 tracking-tight">R$ 79,90</span>
+          <span class="block text-xs text-primary mt-1 font-mono">Acesso vitalício</span>
+        </div>
+
+        <div>
+          <a class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-primary-container text-on-primary text-base font-bold rounded-2xl btn-primary"
+             href="/api/redirect/curso">
+            Garantir Meu Acesso
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="pt-6 border-t border-outline-variant/15 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant text-xs font-mono">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">lock</span>
+            Pagamento Seguro
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">bolt</span>
+            Acesso Imediato
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">workspace_premium</span>
+            Certificado Incluso
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MENTORIA — Split Layout (Text Left + Cards Right)
+     ═══════════════════════════════════════════════ -->
+<section id="mentoria" class="py-20 bg-surface-container-lowest">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: Text + CTA -->
+      <div class="reveal space-y-5">
+        <span class="text-[11px] font-mono uppercase tracking-[0.18em] text-primary-container">Além do Curso</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Conheça nossa Mentoria Exclusiva</h2>
+        <p class="text-base text-on-surface-variant leading-relaxed max-w-md">
+          Mais do que aulas gravadas. Um acompanhamento lado a lado para garantir que você atinja seus objetivos e revolucione sua carreira.
+        </p>
+        <a href="/api/redirect/whatsapp"
+           class="inline-flex items-center gap-2 px-7 py-3.5 bg-primary-container text-on-primary font-bold rounded-2xl btn-primary text-sm"
+           target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined text-lg">chat</span>
+          Saber mais sobre a Mentoria
+        </a>
+      </div>
+
+      <!-- Right: Benefit Cards -->
+      <div class="space-y-4">
+        <div class="reveal reveal-d1 bg-surface-container border border-outline-variant/20 p-6 rounded-2xl flex items-start gap-4 card-hover">
+          <span class="material-symbols-outlined text-3xl text-primary-container shrink-0">person_search</span>
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Acompanhamento 1-on-1</h3>
+            <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+              Análise individual do seu perfil e das suas dificuldades. Traçamos a melhor rota para o seu aprendizado exclusivo.
+            </p>
+          </div>
+        </div>
+        <div class="reveal reveal-d2 bg-surface-container border border-outline-variant/20 p-6 rounded-2xl flex items-start gap-4 card-hover">
+          <span class="material-symbols-outlined text-3xl text-primary-container shrink-0">trending_up</span>
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Plano de Carreira Personalizado</h3>
+            <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+              Orientação focada no seu mercado de atuação. Descubra como aplicar o Power Query no seu dia a dia profissional.
+            </p>
+          </div>
+        </div>
+        <div class="reveal reveal-d3 bg-surface-container border border-outline-variant/20 p-6 rounded-2xl flex items-start gap-4 card-hover">
+          <span class="material-symbols-outlined text-3xl text-primary-container shrink-0">forum</span>
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Contato Direto</h3>
+            <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+              Canal direto para tirar dúvidas sobre projetos reais da sua empresa, garantindo que você nunca fique travado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ — Accordion (No eyebrow)
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-background" id="faq">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Perguntas Frequentes</h2>
+      <p class="text-base text-on-surface-variant mt-3">
+        Tudo o que você precisa saber sobre a metodologia BeeQuery e o formato do curso.
+      </p>
+    </div>
+
+    <div class="accordion-group space-y-3">
+      <div class="reveal rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+        <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer">
+          <span class="text-sm font-bold text-on-surface pr-4">Preciso saber programar antes?</span>
+          <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg shrink-0">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="px-6 pb-5 border-t border-outline-variant/15">
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
               Não. O treinamento começa desde a interface gráfica do Power Query no Excel (onde 80% das tarefas são feitas sem digitar uma única linha de código) e avança gradualmente para a sintaxe M de forma intuitiva.
             </p>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-2">
-<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="help">help</span>
-              Quais versões do Excel são suportadas?
-            </h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d1 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+        <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer">
+          <span class="text-sm font-bold text-on-surface pr-4">Quais versões do Excel são suportadas?</span>
+          <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg shrink-0">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="px-6 pb-5 border-t border-outline-variant/15">
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
               O Power Query é nativo em todas as versões do Microsoft 365, Excel 2016, 2019 e 2021 (tanto Windows quanto Mac com recursos equivalentes). Usuários do Excel 2010 e 2013 podem utilizar via add-in oficial gratuito.
             </p>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-2">
-<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="help">help</span>
-              Por quanto tempo terei acesso ao curso?
-            </h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+        <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer">
+          <span class="text-sm font-bold text-on-surface pr-4">Por quanto tempo terei acesso ao curso?</span>
+          <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg shrink-0">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="px-6 pb-5 border-t border-outline-variant/15">
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
               Nesta condição especial de lançamento, seu acesso é vitalício. Você poderá assistir às aulas no seu ritmo, revisitar materiais de apoio e baixar novos templates sempre que forem atualizados.
             </p>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-2">
-<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="help">help</span>
-              O curso emite certificado de conclusão?
-            </h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d3 rounded-2xl bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+        <button data-accordion class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer">
+          <span class="text-sm font-bold text-on-surface pr-4">O curso emite certificado de conclusão?</span>
+          <span class="material-symbols-outlined text-on-surface-variant accordion-icon text-lg shrink-0">expand_more</span>
+        </button>
+        <div class="accordion-body">
+          <div class="px-6 pb-5 border-t border-outline-variant/15">
+            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
               Sim! Ao concluir todas as aulas e projetos práticos, você recebe o Certificado Oficial BeeQuery com chave de autenticidade digital, carga horária e ementa detalhada para comprovar sua expertise.
             </p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- RODAPÉ OFICIAL BEEQUERY (Anchored & JSON Compatible) -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-<!-- Brand e Copyright -->
-<div class="flex flex-col items-center md:items-start gap-3">
-<a class="flex items-center gap-3" href="#">
-<img alt="BeeQuery Logo" class="h-8 w-auto object-contain" src="/img/bee.png?v=4">
-<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary tracking-tight">BeeQuery</span>
-</a>
-<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left max-w-md">
-          © 2025 BeeQuery. Todos os direitos reservados. Plataforma especializada em Análise de Dados com Power Query e M-Engine. Arquitetura e Análise de Dados no Excel. Desenvolvido por Fernando Rodrigues - High-Velocity Analytics.
-        <br><span class="text-xs mt-2 inline-block text-on-surface-variant opacity-75">Site fornecido por MODUS Ltda</span></p>
-</div>
-<!-- Links Institucionais do JSON -->
-<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary text-body-sm font-body-sm transition-colors" href="javascript:void(0)" onclick="openModal('Termos de Uso', 'Ao acessar o curso BeeQuery, você concorda em cumprir estes termos de serviço. O conteúdo é para uso pessoal e intransferível. É proibida a reprodução ou distribuição sem autorização prévia.')">Termos de Uso</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary text-body-sm font-body-sm transition-colors" href="javascript:void(0)" onclick="openModal('Políticas de Privacidade', 'Sua privacidade é importante para nós. Respeitamos a sua privacidade em relação a qualquer informação sua que possamos coletar. Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.')">Políticas de Privacidade</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary text-body-sm font-body-sm transition-colors" href="javascript:void(0)" onclick="openModal('Certificado Oficial', 'Após a conclusão de todos os módulos do curso, você receberá um certificado de conclusão oficial da BeeQuery, que pode ser adicionado ao seu LinkedIn ou currículo para comprovar suas habilidades em Power Query e Análise de Dados.')">Certificado Oficial</a>
-
-
-</div>
-</div>
-</footer>
-<!-- BOTÃO FLUTUANTE DE WHATSAPP -->
-<aside class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high/95 backdrop-blur-md border border-outline-variant/40 shadow-lg text-on-surface font-label-sm text-label-sm select-none"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span></span><span class="text-body-sm font-medium text-on-surface">Consultor Online • Tire Dúvidas</span></div><a aria-label="Fale no WhatsApp com especialista" class="flex items-center gap-3 px-5 py-3.5 bg-[#25D366] text-black font-title-md text-title-md font-bold rounded-full shadow-2xl hover:scale-105 hover:bg-[#20bd5a] transition-all duration-200 active:scale-95 border border-[#25D366]/40" href="https://wa.me/5511970793120?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20curso%20BeeQuery" rel="noopener noreferrer" target="_blank"><svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 2C6.505 2 2.008 6.497 2.008 12.023c0 1.84.5 3.565 1.371 5.053L2 22l5.074-1.33a10.016 10.016 0 0 0 4.957 1.353c5.526 0 10.023-4.497 10.023-10.023C22.054 6.497 17.557 2 12.031 2zm5.85 14.204c-.244.686-1.42 1.309-1.96 1.393-.509.078-1.168.11-3.397-.81-2.85-1.176-4.673-4.086-4.814-4.275-.14-.188-1.15-1.53-1.15-2.918 0-1.388.727-2.072.985-2.353.257-.282.562-.352.75-.352.188 0 .375.003.54.01.173.01.407-.066.636.485.244.587.82 2.003.892 2.15.072.146.12.32.023.512-.097.193-.146.313-.288.482-.142.17-.298.38-.426.51-.142.145-.29.303-.125.587.165.283.733 1.206 1.572 1.954 1.079.962 1.99 1.26 2.274 1.402.283.141.448.123.613-.067.165-.188.707-.822.895-1.104.188-.283.376-.235.636-.141.259.094 1.644.774 1.927.915.283.142.47.212.54.33.07.118.07.686-.174 1.372z"></path></svg><span class="font-bold tracking-tight">Dúvidas? Fale no WhatsApp</span></a></aside>
-
-
-
-<div id="modal-overlay" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4" style="z-index:9999;">
-    <div id="modal-content" class="bg-surface-container border border-outline-variant rounded-2xl p-6 max-w-lg w-full relative">
-        <button onclick="document.getElementById('modal-overlay').classList.add('hidden')" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface">
-            <span class="material-symbols-outlined">close</span>
-        </button>
-        <h3 id="modal-title" class="text-xl font-bold text-on-surface mb-4"></h3>
-        <p id="modal-text" class="text-on-surface-variant text-sm leading-relaxed"></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/15 rounded-t-3xl mt-[-1px]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+    <!-- Brand -->
+    <div class="flex flex-col items-center md:items-start gap-3">
+      <a class="flex items-center gap-3" href="#">
+        <img alt="BeeQuery Logo" class="h-8 w-auto object-contain" src="/img/bee.png?v=4">
+        <span class="text-lg font-bold text-primary tracking-tight">BeeQuery</span>
+      </a>
+      <p class="text-xs text-on-surface-variant text-center md:text-left max-w-md leading-relaxed">
+        © <span id="footer-year">2025</span> BeeQuery. Todos os direitos reservados. Plataforma especializada em Análise de Dados com Power Query e M-Engine. Desenvolvido por Fernando Rodrigues.
+        <br><span class="text-[10px] mt-1.5 inline-block text-on-surface-variant/60">Site fornecido por MODUS Ltda</span>
+      </p>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
+      <a class="text-xs text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+         onclick="openModal('Termos de Uso', 'Ao acessar o curso BeeQuery, você concorda em cumprir estes termos de serviço. O conteúdo é para uso pessoal e intransferível. É proibida a reprodução ou distribuição sem autorização prévia.')">
+        Termos de Uso
+      </a>
+      <a class="text-xs text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+         onclick="openModal('Políticas de Privacidade', 'Sua privacidade é importante para nós. Respeitamos a sua privacidade em relação a qualquer informação sua que possamos coletar. Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.')">
+        Políticas de Privacidade
+      </a>
+      <a class="text-xs text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+         onclick="openModal('Certificado Oficial', 'Após a conclusão de todos os módulos do curso, você receberá um certificado de conclusão oficial da BeeQuery, que pode ser adicionado ao seu LinkedIn ou currículo para comprovar suas habilidades em Power Query e Análise de Dados.')">
+        Certificado Oficial
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+     ═══════════════════════════════════════════════ -->
+<aside class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+  <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/30 shadow-lg text-on-surface text-xs select-none">
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+    </span>
+    <span class="font-medium text-on-surface">Consultor Online</span>
+  </div>
+  <a aria-label="Fale no WhatsApp com especialista"
+     class="flex items-center gap-3 px-5 py-3.5 bg-[#25D366] text-black font-bold text-sm rounded-2xl shadow-2xl hover:scale-105 hover:bg-[#20bd5a] transition-all duration-200 active:scale-95"
+     href="https://wa.me/5511970793120?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20curso%20BeeQuery"
+     rel="noopener noreferrer" target="_blank">
+    <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.031 2C6.505 2 2.008 6.497 2.008 12.023c0 1.84.5 3.565 1.371 5.053L2 22l5.074-1.33a10.016 10.016 0 0 0 4.957 1.353c5.526 0 10.023-4.497 10.023-10.023C22.054 6.497 17.557 2 12.031 2zm5.85 14.204c-.244.686-1.42 1.309-1.96 1.393-.509.078-1.168.11-3.397-.81-2.85-1.176-4.673-4.086-4.814-4.275-.14-.188-1.15-1.53-1.15-2.918 0-1.388.727-2.072.985-2.353.257-.282.562-.352.75-.352.188 0 .375.003.54.01.173.01.407-.066.636.485.244.587.82 2.003.892 2.15.072.146.12.32.023.512-.097.193-.146.313-.288.482-.142.17-.298.38-.426.51-.142.145-.29.303-.125.587.165.283.733 1.206 1.572 1.954 1.079.962 1.99 1.26 2.274 1.402.283.141.448.123.613-.067.165-.188.707-.822.895-1.104.188-.283.376-.235.636-.141.259.094 1.644.774 1.927.915.283.142.47.212.54.33.07.118.07.686-.174 1.372z"></path>
+    </svg>
+    Fale no WhatsApp
+  </a>
+</aside>
+
+<!-- ═══════════════════════════════════════════════
+     MODAL
+     ═══════════════════════════════════════════════ -->
+<div id="modal-overlay" class="fixed inset-0 bg-black/70 z-[999] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+  <div id="modal-content" class="bg-surface-container border border-outline-variant/30 rounded-2xl p-6 max-w-lg w-full relative">
+    <button onclick="document.getElementById('modal-overlay').classList.add('hidden')" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h3 id="modal-title" class="text-lg font-bold text-on-surface mb-4"></h3>
+    <p id="modal-text" class="text-sm text-on-surface-variant leading-relaxed"></p>
+  </div>
 </div>
+
+<!-- Scripts -->
 <script>
 function openModal(title, text) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-text').innerHTML = text;
-    document.getElementById('modal-overlay').classList.remove('hidden');
+  document.getElementById('modal-title').innerText = title;
+  document.getElementById('modal-text').innerHTML = text;
+  document.getElementById('modal-overlay').classList.remove('hidden');
 }
 </script>
+<script src="./js/animations.js"></script>
 <script src="./js/bee.js"></script>
-</body></html>
+</body>
+</html>
