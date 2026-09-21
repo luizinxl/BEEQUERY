@@ -107,21 +107,42 @@
     opacity: 0.035;
   }
 
-  /* ── Navbar States ─────────────────────────── */
+  /* ── Cyber Honeycomb Mesh Background ───────── */
+  .honeycomb-pattern {
+    background-image: radial-gradient(rgba(255, 184, 0, 0.08) 1px, transparent 1px), radial-gradient(rgba(255, 184, 0, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+  }
+
+  /* ── Authentic Geometric Honeycomb Hexagons (Subtle background clusters) ── */
+  @keyframes honeycombFloatSlow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1.2deg); }
+  }
+  @keyframes honeycombFloatAlt {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(-1.5deg); }
+  }
+  .honeycomb-float-1 {
+    animation: honeycombFloatSlow 14s ease-in-out infinite;
+  }
+  .honeycomb-float-2 {
+    animation: honeycombFloatAlt 18s ease-in-out infinite;
+  }
+
+  /* ── Navbar States (Permanently Frosted Dark - Never Transparent) ── */
   #main-nav {
-    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    background: rgba(13, 14, 18, 0.96) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid rgba(81, 69, 50, 0.4) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6) !important;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
-  .nav-transparent {
-    background: transparent !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-  }
-  .nav-scrolled {
-    background: rgba(13, 14, 18, 0.82) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-color: rgba(81, 69, 50, 0.3) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+  #main-nav.nav-scrolled {
+    background: rgba(10, 11, 14, 0.98) !important;
+    border-bottom-color: rgba(255, 184, 0, 0.35) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.75) !important;
   }
 
   /* ── Scroll Reveal ─────────────────────────── */
@@ -147,9 +168,6 @@
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .accordion-body.acc-open {
-    /* max-height set by JS */
-  }
   .accordion-icon {
     transition: transform 0.3s ease;
   }
@@ -172,7 +190,7 @@
   .btn-primary:hover {
     transform: translateY(-1px);
     filter: brightness(1.08);
-    box-shadow: 0 6px 20px -4px rgba(255, 184, 0, 0.3);
+    box-shadow: 0 6px 24px -4px rgba(255, 184, 0, 0.35);
   }
   .btn-primary:active {
     transform: translateY(0) scale(0.98);
@@ -192,12 +210,12 @@
   .card-hover:hover {
     border-color: rgba(255, 184, 0, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
   }
 
   /* ── Subtle Glow ───────────────────────────── */
   .glow-amber {
-    box-shadow: 0 0 40px -8px rgba(255, 184, 0, 0.15);
+    box-shadow: 0 0 45px -10px rgba(255, 184, 0, 0.18);
   }
 
   /* ── Code syntax highlighting ──────────────── */
@@ -205,10 +223,52 @@
   .code-variable { color: #ffdbac; font-weight: 600; }
   .code-string { color: #ffdca1; font-family: 'JetBrains Mono', monospace; }
   .code-comment { color: #9e8f78; font-style: italic; }
+
+  /* ── Range Slider Custom Styling ───────────── */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffb800;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+    transition: transform 0.15s ease;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffb800;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+    border: none;
+  }
+
+  /* ── Subtle Data Beam Pulse ────────────────── */
+  @keyframes dataBeam {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(200%); opacity: 0; }
+  }
+  .data-beam {
+    animation: dataBeam 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  /* ── Scrollbar Hide ────────────────────────── */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>
 </head>
 
-<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary font-sans">
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary font-sans honeycomb-pattern">
 
 <!-- ═══════════════════════════════════════════════
      NOISE TEXTURE OVERLAY
@@ -221,15 +281,28 @@
 </svg>
 
 <!-- ═══════════════════════════════════════════════
-     NAVBAR
+     TOAST NOTIFICATION COMPONENT
      ═══════════════════════════════════════════════ -->
-<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full border-b border-outline-variant/30 nav-transparent">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-3 flex items-center justify-between">
+<div id="tech-toast" class="fixed top-20 right-6 z-[80] hidden opacity-0 transition-opacity duration-300 px-4 py-3 rounded-2xl bg-surface-container-highest/95 backdrop-blur-xl border border-primary-container/40 text-xs font-mono text-primary shadow-2xl shadow-black flex items-center gap-2">
+  <span class="material-symbols-outlined text-primary-container text-base">check_circle</span>
+  <span id="tech-toast-msg">Notificação</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR (Permanently Frosted Dark - Never Overlaps or Blurs)
+     ═══════════════════════════════════════════════ -->
+<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full bg-[#0d0e12]/95 backdrop-blur-xl border-b border-outline-variant/30 shadow-lg shadow-black/50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-3.5 flex items-center justify-between">
     <!-- Brand -->
     <a class="flex items-center gap-3 group" href="#">
-      <img alt="BeeQuery Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="/img/bee.png?v=4">
+      <div class="relative">
+        <img alt="BeeQuery Logo" class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" src="/img/bee.png?v=4">
+        <span class="absolute -bottom-1 -right-1 w-2 h-2 rounded-full bg-primary-container ring-1 ring-background animate-ping"></span>
+      </div>
       <div class="hidden sm:flex flex-col">
-        <span class="text-lg font-bold text-primary tracking-tight">BeeQuery</span>
+        <span class="text-lg font-bold text-primary tracking-tight flex items-center gap-1.5">
+          BeeQuery <span class="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-primary-container/15 text-primary-container">v4.2</span>
+        </span>
         <span class="text-[11px] font-mono text-on-surface-variant tracking-wide">por Fernando Rodrigues</span>
       </div>
     </a>
@@ -238,6 +311,7 @@
     <nav class="hidden md:flex items-center gap-7">
       <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#recursos">Recursos</a>
       <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#comparativo">Comparativo</a>
+      <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#calculadora">Calculadora ROI</a>
       <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#mentoria">Mentoria</a>
       <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#depoimentos">Depoimentos</a>
       <a class="text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#faq">FAQ</a>
@@ -246,8 +320,14 @@
     <!-- Action Cluster -->
     <div class="flex items-center gap-3">
       <a class="hidden lg:flex items-center justify-center p-2.5 rounded-2xl border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary-container/50 btn-ghost"
-         href="/api/redirect/whatsapp" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp">
+         href="https://wa.me/5511970793120" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp" title="WhatsApp">
         <span class="material-symbols-outlined text-primary-container">chat</span>
+      </a>
+      <a class="hidden lg:flex items-center justify-center p-2.5 rounded-2xl border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary-container/50 btn-ghost"
+         href="https://www.linkedin.com/in/rodriguesfernand/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+        <svg class="w-[22px] h-[22px] fill-current text-primary-container" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
       </a>
       <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary text-sm font-bold rounded-2xl btn-primary"
          href="/api/redirect/curso">
@@ -266,7 +346,10 @@
 <!-- Mobile Menu Drawer -->
 <aside id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-72 bg-surface-container-lowest z-[70] flex flex-col p-6 gap-6 border-l border-outline-variant/30">
   <div class="flex items-center justify-between">
-    <span class="text-lg font-bold text-primary">BeeQuery</span>
+    <div class="flex items-center gap-2">
+      <img alt="BeeQuery" class="h-6 w-auto" src="/img/bee.png?v=4">
+      <span class="text-lg font-bold text-primary">BeeQuery</span>
+    </div>
     <button id="mobile-menu-close" class="p-1 text-on-surface-variant hover:text-on-surface" aria-label="Fechar">
       <span class="material-symbols-outlined">close</span>
     </button>
@@ -274,6 +357,7 @@
   <nav class="flex flex-col gap-4 mt-4">
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#recursos">Recursos</a>
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#comparativo">Comparativo</a>
+    <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#calculadora">Calculadora ROI</a>
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#mentoria">Mentoria</a>
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#depoimentos">Depoimentos</a>
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#faq">FAQ</a>
@@ -287,79 +371,180 @@
 <main>
 
 <!-- ═══════════════════════════════════════════════
-     HERO — Split Screen (Left Text, Right Terminal)
+     HERO — Split Screen with Interactive IDE
      ═══════════════════════════════════════════════ -->
-<section id="hero" class="relative pt-28 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-container/8 via-transparent to-transparent pointer-events-none"></div>
+<section id="hero" class="relative pt-36 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+  <!-- Background glow effects -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-container/10 via-transparent to-transparent pointer-events-none"></div>
+  <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
 
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <!-- Honeycomb Hexagon Cluster 1 (Authentic geometric colmeia behind terminal) -->
+  <div class="absolute top-12 right-2 lg:right-10 w-72 h-72 pointer-events-none select-none opacity-25 z-0 honeycomb-float-1" aria-hidden="true">
+    <svg class="w-full h-full" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="honey-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffb800" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#ffb800" stop-opacity="0.02" />
+        </linearGradient>
+        <linearGradient id="honey-grad-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffdca1" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#ffb800" stop-opacity="0.06" />
+        </linearGradient>
+      </defs>
+      <g stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.3" stroke-linejoin="round">
+        <polygon points="130,34 161,52 161,88 130,106 99,88 99,52" fill="url(#honey-grad-1)" />
+        <polygon points="161,88 192,106 192,142 161,160 130,142 130,106" fill="url(#honey-grad-glow)" />
+        <polygon points="99,88 130,106 130,142 99,160 68,142 68,106" fill="url(#honey-grad-1)" />
+        <polygon points="192,34 223,52 223,88 192,106 161,88 161,52" fill="url(#honey-grad-1)" />
+        <polygon points="192,142 223,160 223,196 192,214 161,196 161,160" fill="url(#honey-grad-1)" />
+      </g>
+      <circle cx="161" cy="88" r="2.5" fill="#ffb800" opacity="0.85" />
+      <circle cx="130" cy="106" r="2.5" fill="#ffb800" opacity="0.85" />
+      <circle cx="192" cy="142" r="2" fill="#ffdca1" opacity="0.7" />
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <!-- Left: Content -->
       <div class="lg:col-span-6 space-y-6">
-        <!-- Status badge -->
-        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-surface-container-high/80 border border-outline-variant/30">
-          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-          <span class="text-xs font-mono text-primary tracking-wide">Power Query & M-Engine</span>
+        <!-- Status badge with Bee Worker telemetry -->
+        <div class="reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-2xl bg-surface-container-high/80 border border-outline-variant/30 backdrop-blur-md">
+          <img src="/img/bee.png?v=4" alt="Bee Drone" class="w-4 h-4 object-contain animate-bounce">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+          <span class="text-xs font-mono text-primary tracking-wide">Motor M-Engine Corporativo • Power Query</span>
         </div>
 
         <h1 class="reveal reveal-d1 text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.08] text-on-surface">
           Transforme Horas Manuais em Segundos de
-          <span class="text-primary-container">Automação</span>
+          <span class="text-primary-container relative inline-block">
+            Automação
+            <!-- Subtle underline highlight -->
+            <svg class="absolute -bottom-1 left-0 w-full h-2 text-primary-container/40" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0 5 Q 50 10, 100 5" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </span>
         </h1>
 
         <p class="reveal reveal-d2 text-base lg:text-lg text-on-surface-variant leading-relaxed max-w-lg">
-          Substitua PROCVs frágeis e planilhas lentas por pipelines resilientes com 1 clique. Domine análise de dados corporativa no Excel.
+          Substitua PROCVs frágeis e planilhas lentas por pipelines resilientes em 1 clique. Domine engenharia de dados corporativa no Excel e Power BI.
         </p>
 
+        <!-- CTA cluster -->
         <div class="reveal reveal-d3 flex flex-wrap items-center gap-4 pt-1">
           <a class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary-container text-on-primary text-base font-bold rounded-2xl btn-primary"
              href="/api/redirect/curso">
             Garantir Meu Acesso
           </a>
           <a class="inline-flex items-center gap-2 px-5 py-3.5 bg-surface-container-low border border-outline-variant/30 text-on-surface text-sm font-semibold rounded-2xl btn-ghost hover:border-primary-container/50 hover:text-primary"
-             href="#ementa">
-            Ver Grade Curricular
-            <span class="material-symbols-outlined text-primary-container text-lg">arrow_downward</span>
+             href="#calculadora">
+            Simular Economia de Horas
+            <span class="material-symbols-outlined text-primary-container text-lg">calculate</span>
           </a>
+        </div>
+
+        <!-- Mini telemetry bullet points -->
+        <div class="reveal reveal-d4 pt-2 flex flex-wrap items-center gap-5 text-xs font-mono text-on-surface-variant/80">
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">memory</span>
+            Motor VertiPaq
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">speed</span>
+            14.820 lin/seg
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary-container text-sm">all_inclusive</span>
+            Acesso Vitalício
+          </span>
         </div>
       </div>
 
-      <!-- Right: Terminal IDE Mockup -->
+      <!-- Right: Interactive Terminal IDE with Multi-Scenario Live Runner -->
       <div class="lg:col-span-6 reveal reveal-d2">
-        <div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-2xl shadow-black/40 overflow-hidden">
-          <!-- Header -->
-          <div class="flex items-center justify-between px-4 py-3 bg-surface-container border-b border-outline-variant/20">
+        <div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-2xl shadow-black/50 overflow-hidden relative group">
+          <!-- Ambient beam -->
+          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-70"></div>
+
+          <!-- Header with window buttons, scenario badge & interactive tabs -->
+          <div class="px-4 py-2.5 bg-surface-container border-b border-outline-variant/20 flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-2">
               <div class="w-3 h-3 rounded-full bg-error/60"></div>
               <div class="w-3 h-3 rounded-full bg-primary-container/60"></div>
               <div class="w-3 h-3 rounded-full bg-primary/60"></div>
-              <span class="ml-2 text-[11px] font-mono text-on-surface-variant/70">pipeline_consolidacao.m</span>
+              
+              <!-- Tab Switcher -->
+              <div class="ml-2 flex items-center gap-1 bg-surface-container-lowest p-1 rounded-xl border border-outline-variant/20">
+                <button data-term-tab="m-code" class="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-surface-container-high text-primary border border-primary-container/40 transition-colors flex items-center gap-1">
+                  <span>pipeline.m</span>
+                </button>
+                <button data-term-tab="raw-data" class="px-2.5 py-1 rounded-lg text-[11px] font-mono text-on-surface-variant hover:text-on-surface border border-transparent transition-colors">
+                  <span>dados_brutos</span>
+                </button>
+                <button data-term-tab="clean-data" class="px-2.5 py-1 rounded-lg text-[11px] font-mono text-on-surface-variant hover:text-on-surface border border-transparent transition-colors">
+                  <span>resultado_final</span>
+                </button>
+              </div>
             </div>
-            <div class="flex items-center gap-2 px-2.5 py-0.5 rounded-2xl bg-primary-container/10 border border-primary-container/25">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-              <span class="text-[11px] font-mono text-primary-container">1,2s de execução</span>
+
+            <!-- Scenario Badge & Status -->
+            <div class="flex items-center gap-2">
+              <span id="terminal-scenario-badge" class="hidden sm:inline-flex text-[10px] font-mono px-2 py-0.5 rounded bg-primary-container/15 text-primary-container border border-primary-container/20">Folder.Files • Lote</span>
+              <button id="terminal-copy-btn" class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 text-[11px] font-mono" title="Copiar Código M">
+                <span class="material-symbols-outlined text-sm">content_copy</span>
+              </button>
+              <div id="terminal-status-badge" class="flex items-center gap-1.5 px-2 py-0.5 rounded-xl bg-primary-container/10 border border-primary-container/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                <span class="text-[11px] font-mono text-primary-container">Pronto</span>
+              </div>
             </div>
           </div>
-          <!-- Code Body -->
-          <div class="p-5 font-mono text-[12px] leading-[1.65] space-y-1 overflow-x-auto text-on-surface">
+
+          <!-- Scenario Selector Ribbon (Execuções Diferentes com 1 Clique) -->
+          <div class="px-3 py-2 bg-surface-container-low/95 border-b border-outline-variant/20 flex items-center gap-1.5 overflow-x-auto scrollbar-hide text-xs font-mono select-none">
+            <span class="text-[10px] uppercase tracking-wider text-on-surface-variant/70 shrink-0 flex items-center gap-1 font-semibold mr-1">
+              <span class="material-symbols-outlined text-xs text-primary-container">alt_route</span>
+              Exemplos:
+            </span>
+            <button data-scenario-btn="filiais" class="px-2.5 py-1 rounded-lg bg-primary-container text-on-primary font-bold border border-primary-container shrink-0 transition-all flex items-center gap-1.5 hover:brightness-110 shadow-sm" title="Consolidação de 36 arquivos em lote">
+              <span class="material-symbols-outlined text-xs">folder_zip</span>
+              <span>36 Filiais</span>
+            </button>
+            <button data-scenario-btn="sap" class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/30 shrink-0 transition-all flex items-center gap-1.5 hover:border-primary-container/40" title="Limpeza de cabeçalhos e unpivot do ERP">
+              <span class="material-symbols-outlined text-xs">cleaning_services</span>
+              <span>Limpeza SAP</span>
+            </button>
+            <button data-scenario-btn="procv" class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/30 shrink-0 transition-all flex items-center gap-1.5 hover:border-primary-container/40" title="Join indexado de 120.000 linhas em memória">
+              <span class="material-symbols-outlined text-xs">bolt</span>
+              <span>Matar PROCV</span>
+            </button>
+          </div>
+
+          <!-- Code Body Container -->
+          <div id="terminal-code-body" class="p-5 font-mono text-[12px] leading-[1.65] space-y-1 overflow-x-auto text-on-surface min-h-[200px]">
             <div class="code-comment select-none">// Consolidação automática sem macros ou VBA</div>
             <div><span class="code-keyword">let</span></div>
             <div class="pl-4"><span class="code-variable">Fonte</span> = Folder.Files(<span class="code-string">"C:\Relatorios\Matriz_Vendas"</span>),</div>
             <div class="pl-4"><span class="code-variable">Parsed</span> = Table.AddColumn(<span class="code-variable">Fonte</span>, <span class="code-string">"Dados"</span>, <span class="code-keyword">each</span> Excel.Workbook([Content])),</div>
             <div class="pl-4"><span class="code-variable">Filtrado</span> = Table.SelectRows(<span class="code-variable">Parsed</span>, <span class="code-keyword">each</span> ([Extension] = <span class="code-string">".xlsx"</span>)),</div>
-            <div class="pl-4"><span class="code-variable">Tabela</span> = Table.Combine(<span class="code-variable">Filtrado</span>[Dados])</div>
+            <div class="pl-4"><span class="code-variable">Tabela</span> = Table.Combine(<span class="code-variable">Filtrado</span>[Dados]),</div>
+            <div class="pl-4"><span class="code-variable">Tipado</span> = Table.TransformColumnTypes(<span class="code-variable">Tabela</span>, {{<span class="code-string">"Valor"</span>, Currency.Type}})</div>
             <div><span class="code-keyword">in</span></div>
-            <div class="pl-4"><span class="code-variable">Tabela</span></div>
+            <div class="pl-4"><span class="code-variable">Tipado</span></div>
           </div>
-          <!-- Footer -->
-          <div class="flex items-center justify-between px-5 py-2.5 bg-surface-container-low border-t border-outline-variant/20 text-on-surface-variant text-[11px] font-mono">
-            <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
-              <span>36 arquivos unificados em lote</span>
+
+          <!-- Action Bar: Run button & Output logger -->
+          <div class="px-4 py-3 bg-surface-container-low border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div id="terminal-footer-log" class="flex items-center gap-2 text-on-surface-variant text-[11px] font-mono w-full sm:w-auto">
+              <span class="material-symbols-outlined text-primary-container text-sm">info</span>
+              <span>Clique no botão para testar este exemplo:</span>
             </div>
-            <span class="text-primary font-semibold">Economia: 14h/semana</span>
+            
+            <button id="terminal-run-btn" class="w-full sm:w-auto px-5 py-2 rounded-xl bg-primary-container text-on-primary text-xs font-bold font-mono flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20 hover:brightness-110 active:scale-95 transition-all">
+              <span class="material-symbols-outlined text-sm">play_arrow</span>
+              <span>Executar Pipeline</span>
+            </button>
           </div>
         </div>
       </div>
@@ -370,7 +555,7 @@
 <!-- ═══════════════════════════════════════════════
      TRUST STRIP — Social Proof + Metrics
      ═══════════════════════════════════════════════ -->
-<section class="py-14 bg-surface-container-lowest border-b border-outline-variant/15">
+<section class="py-14 bg-surface-container-lowest border-b border-outline-variant/15 relative">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <!-- Social proof row -->
     <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
@@ -382,7 +567,7 @@
         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
       </div>
       <p class="text-sm text-on-surface-variant">
-        <strong class="text-on-surface font-semibold">4.9/5</strong> — Mais de 1.200 analistas e especialistas capacitados
+        <strong class="text-on-surface font-semibold">4.9/5</strong> — Mais de 1.200 analistas e especialistas corporativos capacitados
       </p>
     </div>
 
@@ -417,7 +602,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     COMPARATIVO — Side-by-side (No eyebrow)
+     COMPARATIVO — Side-by-side
      ═══════════════════════════════════════════════ -->
 <section class="py-20 bg-background" id="comparativo">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -438,7 +623,7 @@
             </span>
             <div>
               <h3 class="text-lg font-bold text-on-surface">Como a maioria ainda faz</h3>
-              <span class="text-xs text-error font-medium">Processo frágil e improdutivo</span>
+              <span class="text-xs text-error font-medium font-mono">Processo frágil e improdutivo</span>
             </div>
           </div>
           <ul class="space-y-5 mt-6">
@@ -472,7 +657,8 @@
 
       <!-- Card: BeeQuery -->
       <div class="reveal reveal-d1 p-7 rounded-2xl bg-surface-container border-2 border-primary-container/60 glow-amber flex flex-col justify-between relative">
-        <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-2xl bg-primary-container text-on-primary text-[11px] font-bold uppercase tracking-wider">
+        <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-2xl bg-primary-container text-on-primary text-[11px] font-bold uppercase tracking-wider font-mono flex items-center gap-1">
+          <img src="/img/bee.png?v=4" alt="Bee" class="w-3.5 h-3.5 object-contain">
           Padrão BeeQuery
         </div>
         <div>
@@ -482,7 +668,7 @@
             </span>
             <div>
               <h3 class="text-lg font-bold text-primary">Com a BeeQuery: 50x mais rápido</h3>
-              <span class="text-xs text-primary-container font-medium">Pipeline resiliente com 1 clique</span>
+              <span class="text-xs text-primary-container font-medium font-mono">Pipeline resiliente com 1 clique</span>
             </div>
           </div>
           <ul class="space-y-5 mt-6">
@@ -518,10 +704,220 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     RECURSOS — Bento Grid (1 eyebrow allowed)
+     INTERACTIVE ROI / EFFICIENCY CALCULATOR
      ═══════════════════════════════════════════════ -->
-<section class="py-20 bg-surface-container-lowest" id="recursos">
+<section id="calculadora" class="py-20 bg-surface-container-lowest border-y border-outline-variant/15 relative overflow-hidden">
+  <!-- Honeycomb Hexagon Cluster 3 (Subtle geometric colmeia accent) -->
+  <div class="absolute -bottom-10 -right-8 w-64 h-64 pointer-events-none select-none opacity-20 z-0 honeycomb-float-2" aria-hidden="true">
+    <svg class="w-full h-full" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="honey-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffb800" stop-opacity="0.12" />
+          <stop offset="100%" stop-color="#ffb800" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+      <g stroke="rgba(255, 184, 0, 0.35)" stroke-width="1.2" stroke-linejoin="round">
+        <polygon points="120,34 151,52 151,88 120,106 89,88 89,52" fill="url(#honey-grad-3)" />
+        <polygon points="151,88 182,106 182,142 151,160 120,142 120,106" fill="rgba(255, 184, 0, 0.05)" />
+        <polygon points="89,88 120,106 120,142 89,160 58,142 58,106" fill="url(#honey-grad-3)" />
+        <polygon points="120,142 151,160 151,196 120,214 89,196 89,160" fill="url(#honey-grad-3)" />
+      </g>
+      <circle cx="151" cy="88" r="2" fill="#ffb800" opacity="0.8" />
+      <circle cx="120" cy="142" r="2" fill="#ffdca1" opacity="0.6" />
+    </svg>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-5 lg:px-8 relative z-10">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-primary-container/10 border border-primary-container/20 text-primary-container font-mono text-xs mb-2">
+        <span class="material-symbols-outlined text-sm">calculate</span>
+        <span>Simulador de Impacto Financeiro</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Quanto Tempo e Dinheiro sua Equipe Perde no Excel?</h2>
+      <p class="text-base text-on-surface-variant mt-2">
+        Ajuste os controles abaixo para calcular o retorno direto da automação com BeeQuery.
+      </p>
+    </div>
+
+    <!-- Calculator Card -->
+    <div class="reveal p-8 rounded-3xl bg-surface-container border border-outline-variant/30 shadow-2xl relative overflow-hidden">
+      <!-- Glow background -->
+      <div class="absolute -bottom-10 -right-10 w-72 h-72 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Controls Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <!-- Slider 1 -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-sm">
+              <label for="calc-hours" class="font-bold text-on-surface">Horas gastas em planilhas por semana:</label>
+              <span id="calc-hours-val" class="font-mono font-bold text-primary-container bg-primary-container/10 px-2.5 py-1 rounded-lg border border-primary-container/20">12h / semana</span>
+            </div>
+            <input id="calc-hours" type="range" min="2" max="40" step="1" value="12"
+                   class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container">
+            <div class="flex justify-between text-[11px] font-mono text-on-surface-variant">
+              <span>2h</span>
+              <span>20h</span>
+              <span>40h</span>
+            </div>
+          </div>
+
+          <!-- Slider 2 -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-sm">
+              <label for="calc-team" class="font-bold text-on-surface">Número de pessoas na equipe:</label>
+              <span id="calc-team-val" class="font-mono font-bold text-primary-container bg-primary-container/10 px-2.5 py-1 rounded-lg border border-primary-container/20">2 analistas</span>
+            </div>
+            <input id="calc-team" type="range" min="1" max="20" step="1" value="2"
+                   class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container">
+            <div class="flex justify-between text-[11px] font-mono text-on-surface-variant">
+              <span>1 pessoa</span>
+              <span>10 pessoas</span>
+              <span>20 pessoas</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            *Cálculo fundamentado em rotinas reais de fechamento e custo médio de analistas corporativos. O Power Query reduz em média 92% do tempo operacional repetitivo.
+          </p>
+        </div>
+
+        <!-- Dynamic Results Cards -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 text-center">
+            <span class="material-symbols-outlined text-primary-container text-2xl mb-1">hourglass_disabled</span>
+            <span id="calc-saved-hours" class="block text-3xl font-extrabold text-primary-container font-mono tracking-tight">+1.148h</span>
+            <span class="block text-xs font-semibold text-on-surface mt-1">Horas Salvas / Ano</span>
+            <span class="block text-[11px] text-on-surface-variant mt-0.5">Tempo livre para análises</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 text-center">
+            <span class="material-symbols-outlined text-green-400 text-2xl mb-1">savings</span>
+            <span id="calc-saved-money" class="block text-3xl font-extrabold text-green-400 font-mono tracking-tight">R$ 51.660</span>
+            <span class="block text-xs font-semibold text-on-surface mt-1">Economia Estimada</span>
+            <span class="block text-[11px] text-on-surface-variant mt-0.5">Custo de retrabalho evitado</span>
+          </div>
+
+          <div class="sm:col-span-2 p-4 rounded-2xl bg-primary-container/10 border border-primary-container/30 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <img src="/img/bee.png?v=4" alt="Bee" class="w-8 h-8 object-contain shrink-0">
+              <span class="text-xs text-on-surface leading-snug">
+                Elimine esse desperdício por apenas <strong>R$ 79,90 vitalício</strong>.
+              </span>
+            </div>
+            <a href="/api/redirect/curso" class="px-4 py-2 bg-primary-container text-on-primary text-xs font-bold rounded-xl btn-primary whitespace-nowrap">
+              Começar Agora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     DATA PIPELINE HIVE FLOW (Diagrama de Fluxo)
+     ═══════════════════════════════════════════════ -->
+<section class="py-16 bg-background">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <span class="text-[11px] font-mono uppercase tracking-[0.18em] text-primary-container">Arquitetura de Dados</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-on-surface mt-2 tracking-tight">O Fluxo do Enxame BeeQuery</h2>
+      <p class="text-base text-on-surface-variant mt-2">
+        Como seus dados brutos viajam do caos até relatórios executivos com 1 clique.
+      </p>
+    </div>
+
+    <!-- Visual Architecture Pipeline -->
+    <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-5 relative">
+      <!-- Step 1 -->
+      <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden card-hover">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono text-primary-container px-2.5 py-1 rounded-xl bg-primary-container/10 border border-primary-container/20">Entrada (Raw)</span>
+            <span class="material-symbols-outlined text-on-surface-variant">folder_open</span>
+          </div>
+          <h3 class="text-base font-bold text-on-surface">Fontes Heterogêneas</h3>
+          <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Arquivos XLSX despadronizados, extrações truncadas de ERPs (SAP, TOTVS, Protheus), CSVs e bancos de dados SQL.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-outline-variant/15 text-[11px] font-mono text-outline">
+          Formatos: .xlsx, .csv, .txt, .json
+        </div>
+      </div>
+
+      <!-- Step 2: The Core Engine (BeeQuery) -->
+      <div class="p-6 rounded-2xl bg-surface-container border-2 border-primary-container/50 glow-amber flex flex-col justify-between relative overflow-hidden card-hover">
+        <!-- Connecting data pulse -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-primary-container/20 overflow-hidden">
+          <div class="w-1/3 h-full bg-primary-container data-beam"></div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono text-on-primary px-2.5 py-1 rounded-xl bg-primary-container font-bold flex items-center gap-1">
+              <img src="/img/bee.png?v=4" alt="Bee" class="w-3.5 h-3.5 object-contain">
+              Motor M-Engine
+            </span>
+            <span class="material-symbols-outlined text-primary-container">memory</span>
+          </div>
+          <h3 class="text-base font-bold text-primary">Processamento em Memória</h3>
+          <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Unpivot algorítmico, tratamento de nulos, junções relacionais com Table.Buffer() e tipagem estrita de colunas.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-outline-variant/20 text-[11px] font-mono text-primary flex items-center justify-between">
+          <span>VertiPaq Comprimido</span>
+          <span class="text-primary-container font-bold">100% Automático</span>
+        </div>
+      </div>
+
+      <!-- Step 3: Destination -->
+      <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden card-hover">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono text-green-400 px-2.5 py-1 rounded-xl bg-green-400/10 border border-green-400/20">Saída (Pronto)</span>
+            <span class="material-symbols-outlined text-green-400">monitoring</span>
+          </div>
+          <h3 class="text-base font-bold text-on-surface">Relatórios Executivos</h3>
+          <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Tabelas Dinâmicas leves no Excel, dashboards interativos em Power BI e modelos de dados com confiança 100% para a diretoria.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-outline-variant/15 text-[11px] font-mono text-outline">
+          Destinos: Excel, Power BI, Fabric
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     RECURSOS — Bento Grid
+     ═══════════════════════════════════════════════ -->
+<section class="py-20 bg-surface-container-lowest relative overflow-hidden" id="recursos">
+  <!-- Honeycomb Hexagon Cluster 2 (Subtle background colmeia) -->
+  <div class="absolute top-16 -left-10 w-72 h-72 pointer-events-none select-none opacity-20 z-0 honeycomb-float-1" aria-hidden="true">
+    <svg class="w-full h-full" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="honey-grad-rec" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffb800" stop-opacity="0.10" />
+          <stop offset="100%" stop-color="#ffb800" stop-opacity="0.01" />
+        </linearGradient>
+      </defs>
+      <g stroke="rgba(255, 184, 0, 0.35)" stroke-width="1.2" stroke-linejoin="round">
+        <polygon points="130,34 161,52 161,88 130,106 99,88 99,52" fill="url(#honey-grad-rec)" />
+        <polygon points="161,88 192,106 192,142 161,160 130,142 130,106" fill="rgba(255, 184, 0, 0.05)" />
+        <polygon points="99,88 130,106 130,142 99,160 68,142 68,106" fill="url(#honey-grad-rec)" />
+        <polygon points="130,142 161,160 161,196 130,214 99,196 99,160" fill="url(#honey-grad-rec)" />
+      </g>
+      <circle cx="161" cy="88" r="2" fill="#ffb800" opacity="0.8" />
+      <circle cx="130" cy="142" r="2.5" fill="#ffb800" opacity="0.8" />
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
     <div class="reveal text-center max-w-2xl mx-auto mb-14">
       <span class="text-[11px] font-mono uppercase tracking-[0.18em] text-primary-container">Especialização Técnica</span>
       <h2 class="text-2xl md:text-3xl font-bold text-on-surface mt-2 tracking-tight">O Que Você Vai Dominar na Prática</h2>
@@ -756,7 +1152,7 @@
       <div class="reveal lg:col-span-4 p-7 rounded-2xl bg-surface-container-high border-2 border-primary-container/40 space-y-6 lg:sticky lg:top-24">
         <div class="flex items-center gap-2 text-primary-container">
           <span class="material-symbols-outlined">stars</span>
-          <span class="text-xs font-bold uppercase tracking-wider">Pacote Exclusivo de Bônus</span>
+          <span class="text-xs font-bold uppercase tracking-wider font-mono">Pacote Exclusivo de Bônus</span>
         </div>
         <h3 class="text-lg font-bold text-on-surface">Incluso na Sua Matrícula:</h3>
         <div class="space-y-4">
@@ -892,9 +1288,9 @@
      ═══════════════════════════════════════════════ -->
 <section class="py-20 bg-background" id="checkout">
   <div class="max-w-3xl mx-auto px-5 lg:px-8">
-    <div class="reveal p-8 md:p-12 rounded-2xl bg-surface-container border border-primary-container/40 relative overflow-hidden">
+    <div class="reveal p-8 md:p-12 rounded-3xl bg-surface-container border-2 border-primary-container/50 glow-amber relative overflow-hidden">
       <!-- Subtle glow -->
-      <div class="absolute -top-16 -right-16 w-56 h-56 bg-primary-container/6 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-16 -right-16 w-56 h-56 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="text-center space-y-5 relative z-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-primary-container/12 border border-primary-container/25">
@@ -908,7 +1304,7 @@
         </p>
 
         <!-- Price -->
-        <div class="py-5 my-2 bg-surface-container-lowest/60 rounded-2xl border border-outline-variant/20 inline-block px-8">
+        <div class="py-5 my-2 bg-surface-container-lowest/80 rounded-2xl border border-outline-variant/20 inline-block px-8">
           <span class="block text-sm text-on-surface-variant line-through">De R$ 149,90</span>
           <span class="block text-3xl md:text-4xl font-extrabold text-primary-container mt-1 tracking-tight">R$ 79,90</span>
           <span class="block text-xs text-primary mt-1 font-mono">Acesso vitalício</span>
@@ -955,7 +1351,7 @@
         <p class="text-base text-on-surface-variant leading-relaxed max-w-md">
           Mais do que aulas gravadas. Um acompanhamento lado a lado para garantir que você atinja seus objetivos e revolucione sua carreira.
         </p>
-        <a href="/api/redirect/whatsapp"
+        <a href="https://wa.me/5511970793120?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Mentoria%20BeeQuery"
            class="inline-flex items-center gap-2 px-7 py-3.5 bg-primary-container text-on-primary font-bold rounded-2xl btn-primary text-sm"
            target="_blank" rel="noopener noreferrer">
           <span class="material-symbols-outlined text-lg">chat</span>
@@ -998,7 +1394,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     FAQ — Accordion (No eyebrow)
+     FAQ — Accordion
      ═══════════════════════════════════════════════ -->
 <section class="py-20 bg-background" id="faq">
   <div class="max-w-3xl mx-auto px-5 lg:px-8">
@@ -1078,8 +1474,8 @@
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
     <!-- Brand -->
     <div class="flex flex-col items-center md:items-start gap-3">
-      <a class="flex items-center gap-3" href="#">
-        <img alt="BeeQuery Logo" class="h-8 w-auto object-contain" src="/img/bee.png?v=4">
+      <a class="flex items-center gap-3 group" href="#">
+        <img alt="BeeQuery Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-110" src="/img/bee.png?v=4">
         <span class="text-lg font-bold text-primary tracking-tight">BeeQuery</span>
       </a>
       <p class="text-xs text-on-surface-variant text-center md:text-left max-w-md leading-relaxed">
@@ -1107,7 +1503,7 @@
 </footer>
 
 <!-- ═══════════════════════════════════════════════
-     FLOATING WHATSAPP BUTTON
+     FLOATING WHATSAPP BUTTON (Bottom Right)
      ═══════════════════════════════════════════════ -->
 <aside class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
   <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/30 shadow-lg text-on-surface text-xs select-none">

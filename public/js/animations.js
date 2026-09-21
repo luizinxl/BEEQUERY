@@ -28,27 +28,24 @@
   }
 
   /* ═══════════════════════════════════════════════
-     2. NAVBAR SCROLL STATE (transparent → blur)
+     2. NAVBAR SCROLL STATE (frosted → compact shadow)
      ═══════════════════════════════════════════════ */
   function initNavbarScroll() {
     const nav = document.getElementById('main-nav');
-    const hero = document.getElementById('hero');
-    if (!nav || !hero) return;
+    if (!nav) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          nav.classList.add('nav-transparent');
-          nav.classList.remove('nav-scrolled');
-        } else {
-          nav.classList.remove('nav-transparent');
-          nav.classList.add('nav-scrolled');
-        }
-      },
-      { threshold: 0.15 }
-    );
+    function checkScroll() {
+      if (window.scrollY > 40) {
+        nav.classList.add('nav-scrolled');
+        nav.classList.remove('nav-top');
+      } else {
+        nav.classList.remove('nav-scrolled');
+        nav.classList.add('nav-top');
+      }
+    }
 
-    observer.observe(hero);
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
   }
 
   /* ═══════════════════════════════════════════════
