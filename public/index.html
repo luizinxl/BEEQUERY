@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="pt-BR">
+<!-- FOUC Prevention: apply saved theme before paint -->
+<script>
+  (function(){
+    var t = localStorage.getItem('bq-theme');
+    if (t === 'light') { document.documentElement.classList.remove('dark'); }
+    else if (t === 'dark') { document.documentElement.classList.add('dark'); }
+    else if (!window.matchMedia('(prefers-color-scheme: dark)').matches) { document.documentElement.classList.remove('dark'); }
+  })();
+</script>
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -28,40 +37,40 @@
     theme: {
       extend: {
         colors: {
-          "surface-bright": "#38393d",
-          "on-error-container": "#ffdad6",
-          "error-container": "#93000a",
-          "surface-variant": "#343539",
-          "on-primary": "#412d00",
-          "surface": "#121317",
-          "surface-dim": "#121317",
-          "on-background": "#e3e2e7",
-          "inverse-primary": "#7c5800",
-          "surface-container-lowest": "#0d0e12",
-          "on-surface-variant": "#d5c4ab",
-          "outline-variant": "#514532",
-          "on-primary-container": "#6b4c00",
-          "primary": "#ffdca1",
-          "secondary-container": "#4a4949",
-          "surface-container": "#1e1f23",
-          "surface-container-high": "#292a2e",
-          "primary-fixed": "#ffdea8",
-          "outline": "#9e8f78",
-          "surface-tint": "#ffba20",
-          "inverse-surface": "#e3e2e7",
-          "on-secondary-container": "#bab8b7",
-          "background": "#121317",
-          "secondary": "#c8c6c5",
-          "primary-fixed-dim": "#ffba20",
-          "error": "#ffb4ab",
-          "on-error": "#690005",
-          "primary-container": "#ffb800",
-          "tertiary-container": "#ffb743",
-          "tertiary": "#ffdbac",
-          "on-surface": "#e3e2e7",
-          "surface-container-low": "#1a1b1f",
-          "surface-container-highest": "#343539",
-          "inverse-on-surface": "#2f3034"
+          "surface-bright": "var(--clr-surface-bright)",
+          "on-error-container": "var(--clr-on-error-container)",
+          "error-container": "var(--clr-error-container)",
+          "surface-variant": "var(--clr-surface-variant)",
+          "on-primary": "var(--clr-on-primary)",
+          "surface": "var(--clr-surface)",
+          "surface-dim": "var(--clr-surface-dim)",
+          "on-background": "var(--clr-on-background)",
+          "inverse-primary": "var(--clr-inverse-primary)",
+          "surface-container-lowest": "var(--clr-surface-container-lowest)",
+          "on-surface-variant": "var(--clr-on-surface-variant)",
+          "outline-variant": "var(--clr-outline-variant)",
+          "on-primary-container": "var(--clr-on-primary-container)",
+          "primary": "var(--clr-primary)",
+          "secondary-container": "var(--clr-secondary-container)",
+          "surface-container": "var(--clr-surface-container)",
+          "surface-container-high": "var(--clr-surface-container-high)",
+          "primary-fixed": "var(--clr-primary-fixed)",
+          "outline": "var(--clr-outline)",
+          "surface-tint": "var(--clr-surface-tint)",
+          "inverse-surface": "var(--clr-inverse-surface)",
+          "on-secondary-container": "var(--clr-on-secondary-container)",
+          "background": "var(--clr-background)",
+          "secondary": "var(--clr-secondary)",
+          "primary-fixed-dim": "var(--clr-primary-fixed-dim)",
+          "error": "var(--clr-error)",
+          "on-error": "var(--clr-on-error)",
+          "primary-container": "var(--clr-primary-container)",
+          "tertiary-container": "var(--clr-tertiary-container)",
+          "tertiary": "var(--clr-tertiary)",
+          "on-surface": "var(--clr-on-surface)",
+          "surface-container-low": "var(--clr-surface-container-low)",
+          "surface-container-highest": "var(--clr-surface-container-highest)",
+          "inverse-on-surface": "var(--clr-inverse-on-surface)"
         },
         borderRadius: {
           DEFAULT: "0.125rem",
@@ -80,6 +89,140 @@
   }
 </script>
 <style>
+  /* ── Theme CSS Custom Properties ─────────────── */
+  /* DARK THEME (default) */
+  .dark {
+    --clr-surface-bright: #38393d;
+    --clr-on-error-container: #ffdad6;
+    --clr-error-container: #93000a;
+    --clr-surface-variant: #343539;
+    --clr-on-primary: #412d00;
+    --clr-surface: #121317;
+    --clr-surface-dim: #121317;
+    --clr-on-background: #e3e2e7;
+    --clr-inverse-primary: #7c5800;
+    --clr-surface-container-lowest: #0d0e12;
+    --clr-on-surface-variant: #d5c4ab;
+    --clr-outline-variant: #514532;
+    --clr-on-primary-container: #6b4c00;
+    --clr-primary: #ffdca1;
+    --clr-secondary-container: #4a4949;
+    --clr-surface-container: #1e1f23;
+    --clr-surface-container-high: #292a2e;
+    --clr-primary-fixed: #ffdea8;
+    --clr-outline: #9e8f78;
+    --clr-surface-tint: #ffba20;
+    --clr-inverse-surface: #e3e2e7;
+    --clr-on-secondary-container: #bab8b7;
+    --clr-background: #121317;
+    --clr-secondary: #c8c6c5;
+    --clr-primary-fixed-dim: #ffba20;
+    --clr-error: #ffb4ab;
+    --clr-on-error: #690005;
+    --clr-primary-container: #ffb800;
+    --clr-tertiary-container: #ffb743;
+    --clr-tertiary: #ffdbac;
+    --clr-on-surface: #e3e2e7;
+    --clr-surface-container-low: #1a1b1f;
+    --clr-surface-container-highest: #343539;
+    --clr-inverse-on-surface: #2f3034;
+  }
+
+  /* LIGHT THEME */
+  :root:not(.dark) {
+    --clr-surface-bright: #faf8f5;
+    --clr-on-error-container: #410002;
+    --clr-error-container: #ffdad6;
+    --clr-surface-variant: #f0ece4;
+    --clr-on-primary: #ffffff;
+    --clr-surface: #fefcf8;
+    --clr-surface-dim: #e8e4dd;
+    --clr-on-background: #1c1b1f;
+    --clr-inverse-primary: #ffdca1;
+    --clr-surface-container-lowest: #ffffff;
+    --clr-on-surface-variant: #5c5648;
+    --clr-outline-variant: #d4c9b5;
+    --clr-on-primary-container: #4a3500;
+    --clr-primary: #8b6914;
+    --clr-secondary-container: #e8e6e5;
+    --clr-surface-container: #f3f0ea;
+    --clr-surface-container-high: #ede9e2;
+    --clr-primary-fixed: #ffdea8;
+    --clr-outline: #7f7667;
+    --clr-surface-tint: #8b6914;
+    --clr-inverse-surface: #313033;
+    --clr-on-secondary-container: #474645;
+    --clr-background: #fefcf8;
+    --clr-secondary: #605f5e;
+    --clr-primary-fixed-dim: #e0a300;
+    --clr-error: #ba1a1a;
+    --clr-on-error: #ffffff;
+    --clr-primary-container: #e0a300;
+    --clr-tertiary-container: #e0a300;
+    --clr-tertiary: #8b6914;
+    --clr-on-surface: #1c1b1f;
+    --clr-surface-container-low: #f8f5ef;
+    --clr-surface-container-highest: #e6e2db;
+    --clr-inverse-on-surface: #f4f0e9;
+  }
+
+  /* ── Theme Toggle Button ──────────────────────── */
+  .theme-toggle-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 1rem;
+    border: 1px solid var(--clr-outline-variant);
+    background: transparent;
+    color: var(--clr-on-surface-variant);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.25s ease, color 0.25s ease, transform 0.2s ease, background 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .theme-toggle-btn:hover {
+    border-color: var(--clr-primary-container);
+    color: var(--clr-primary-container);
+    transform: translateY(-1px);
+    background: rgba(255, 184, 0, 0.06);
+  }
+  .theme-toggle-btn .icon-sun,
+  .theme-toggle-btn .icon-moon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .dark .theme-toggle-btn .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  .dark .theme-toggle-btn .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+  :root:not(.dark) .theme-toggle-btn .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+  }
+  :root:not(.dark) .theme-toggle-btn .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  /* ── Transition for theme change ─────────────── */
+  .theme-transitioning,
+  .theme-transitioning *,
+  .theme-transitioning *::before,
+  .theme-transitioning *::after {
+    transition: background-color 0.4s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                fill 0.3s ease,
+                stroke 0.3s ease !important;
+  }
+
   html { scroll-behavior: smooth; }
 
   .material-symbols-outlined {
@@ -106,10 +249,18 @@
     pointer-events: none;
     opacity: 0.035;
   }
+  :root:not(.dark) .noise-overlay {
+    opacity: 0.02;
+  }
 
   /* ── Cyber Honeycomb Mesh Background ───────── */
-  .honeycomb-pattern {
+  .dark .honeycomb-pattern {
     background-image: radial-gradient(rgba(255, 184, 0, 0.08) 1px, transparent 1px), radial-gradient(rgba(255, 184, 0, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+  }
+  :root:not(.dark) .honeycomb-pattern {
+    background-image: radial-gradient(rgba(224, 163, 0, 0.06) 1px, transparent 1px), radial-gradient(rgba(224, 163, 0, 0.03) 1px, transparent 1px);
     background-size: 32px 32px;
     background-position: 0 0, 16px 16px;
   }
@@ -130,8 +281,8 @@
     animation: honeycombFloatAlt 18s ease-in-out infinite;
   }
 
-  /* ── Navbar States (Permanently Frosted Dark - Never Transparent) ── */
-  #main-nav {
+  /* ── Navbar States — DARK ── */
+  .dark #main-nav {
     background: rgba(13, 14, 18, 0.96) !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
@@ -139,10 +290,25 @@
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6) !important;
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
-  #main-nav.nav-scrolled {
+  .dark #main-nav.nav-scrolled {
     background: rgba(10, 11, 14, 0.98) !important;
     border-bottom-color: rgba(255, 184, 0, 0.35) !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  /* ── Navbar States — LIGHT ── */
+  :root:not(.dark) #main-nav {
+    background: rgba(254, 252, 248, 0.88) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid rgba(212, 201, 181, 0.5) !important;
+    box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.08) !important;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  :root:not(.dark) #main-nav.nav-scrolled {
+    background: rgba(254, 252, 248, 0.95) !important;
+    border-bottom-color: rgba(224, 163, 0, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
   }
 
   /* ── Scroll Reveal ─────────────────────────── */
@@ -207,22 +373,36 @@
   .card-hover {
     transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .card-hover:hover {
+  .dark .card-hover:hover {
     border-color: rgba(255, 184, 0, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
   }
-
-  /* ── Subtle Glow ───────────────────────────── */
-  .glow-amber {
-    box-shadow: 0 0 45px -10px rgba(255, 184, 0, 0.18);
+  :root:not(.dark) .card-hover:hover {
+    border-color: rgba(224, 163, 0, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.12);
   }
 
-  /* ── Code syntax highlighting ──────────────── */
-  .code-keyword { color: #ffb800; font-weight: 600; }
-  .code-variable { color: #ffdbac; font-weight: 600; }
-  .code-string { color: #ffdca1; font-family: 'JetBrains Mono', monospace; }
-  .code-comment { color: #9e8f78; font-style: italic; }
+  /* ── Subtle Glow ───────────────────────────── */
+  .dark .glow-amber {
+    box-shadow: 0 0 45px -10px rgba(255, 184, 0, 0.18);
+  }
+  :root:not(.dark) .glow-amber {
+    box-shadow: 0 0 40px -10px rgba(224, 163, 0, 0.12);
+  }
+
+  /* ── Code syntax highlighting — DARK ──────── */
+  .dark .code-keyword { color: #ffb800; font-weight: 600; }
+  .dark .code-variable { color: #ffdbac; font-weight: 600; }
+  .dark .code-string { color: #ffdca1; font-family: 'JetBrains Mono', monospace; }
+  .dark .code-comment { color: #9e8f78; font-style: italic; }
+
+  /* ── Code syntax highlighting — LIGHT ─────── */
+  :root:not(.dark) .code-keyword { color: #b07800; font-weight: 600; }
+  :root:not(.dark) .code-variable { color: #7a5a0a; font-weight: 600; }
+  :root:not(.dark) .code-string { color: #8b6914; font-family: 'JetBrains Mono', monospace; }
+  :root:not(.dark) .code-comment { color: #9e8f78; font-style: italic; }
 
   /* ── Range Slider Custom Styling ───────────── */
   input[type="range"]::-webkit-slider-thumb {
@@ -231,9 +411,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ffb800;
+    background: var(--clr-primary-container);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+    box-shadow: 0 0 10px rgba(224, 163, 0, 0.4);
     transition: transform 0.15s ease;
   }
   input[type="range"]::-webkit-slider-thumb:hover {
@@ -243,9 +423,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ffb800;
+    background: var(--clr-primary-container);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+    box-shadow: 0 0 10px rgba(224, 163, 0, 0.4);
     border: none;
   }
 
@@ -257,6 +437,13 @@
   }
   .data-beam {
     animation: dataBeam 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  /* ── Button hover glow — Light mode softened ─ */
+  :root:not(.dark) .btn-primary:hover {
+    box-shadow: 0 6px 24px -4px rgba(224, 163, 0, 0.25) !important;
+  }
+
   /* ── Scrollbar Hide ────────────────────────── */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -319,6 +506,11 @@
 
     <!-- Action Cluster -->
     <div class="flex items-center gap-3">
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+        <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
+      </button>
       <a class="hidden lg:flex items-center justify-center p-2.5 rounded-2xl border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary-container/50 btn-ghost"
          href="https://wa.me/5511970793120" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp" title="WhatsApp">
         <span class="material-symbols-outlined text-primary-container">chat</span>
@@ -350,9 +542,15 @@
       <img alt="BeeQuery" class="h-6 w-auto" src="/img/bee.png?v=4">
       <span class="text-lg font-bold text-primary">BeeQuery</span>
     </div>
-    <button id="mobile-menu-close" class="p-1 text-on-surface-variant hover:text-on-surface" aria-label="Fechar">
-      <span class="material-symbols-outlined">close</span>
-    </button>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle-mobile" class="theme-toggle-btn" style="width:34px;height:34px;" aria-label="Alternar tema" title="Alternar tema">
+        <span class="material-symbols-outlined text-base icon-sun">light_mode</span>
+        <span class="material-symbols-outlined text-base icon-moon">dark_mode</span>
+      </button>
+      <button id="mobile-menu-close" class="p-1 text-on-surface-variant hover:text-on-surface" aria-label="Fechar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
   </div>
   <nav class="flex flex-col gap-4 mt-4">
     <a class="text-base text-on-surface-variant hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#recursos">Recursos</a>
@@ -1544,6 +1742,29 @@ function openModal(title, text) {
   document.getElementById('modal-text').innerHTML = text;
   document.getElementById('modal-overlay').classList.remove('hidden');
 }
+</script>
+<script>
+/* ── Theme Toggle Logic ─────────────────────── */
+(function(){
+  function toggleTheme() {
+    var html = document.documentElement;
+    html.classList.add('theme-transitioning');
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.setItem('bq-theme', 'light');
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('bq-theme', 'dark');
+    }
+    setTimeout(function(){ html.classList.remove('theme-transitioning'); }, 500);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('theme-toggle');
+    var btnMobile = document.getElementById('theme-toggle-mobile');
+    if (btn) btn.addEventListener('click', toggleTheme);
+    if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
+  });
+})();
 </script>
 <script src="./js/animations.js"></script>
 <script src="./js/bee.js"></script>

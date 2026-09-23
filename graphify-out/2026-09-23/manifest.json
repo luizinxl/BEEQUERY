@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "public/js/bee.js": {
-    "mtime": 1789971898.0000753,
-    "seen": 1790203606.1871266,
-    "ast_hash": "e1eaea9b564fa4668fd88c5b7b5598cf",
+    "mtime": 1789854902.0750194,
+    "seen": 1789854919.3551953,
+    "ast_hash": "c68d166643f6083207ef7215ac12a844",
     "semantic_hash": ""
   },
   "src/index.js": {
@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "public/index.html": {
-    "mtime": 1790203562.1919692,
-    "seen": 1790203606.1871405,
-    "ast_hash": "f0a6c5baf8fa8a0c93055a51dfd6881c",
+    "mtime": 1789854893.5050712,
+    "seen": 1789854919.3552139,
+    "ast_hash": "005cc854da8098bce94dcc61ac9718e8",
     "semantic_hash": ""
   },
   "public/img/bee.png": {
@@ -63,12 +63,6 @@
     "mtime": 1789852997.2715151,
     "seen": 1789854919.3552227,
     "ast_hash": "bb63d5023f77831af549ca9a717c8466",
-    "semantic_hash": ""
-  },
-  "public/js/animations.js": {
-    "mtime": 1789970567.6356502,
-    "seen": 1790203606.1871223,
-    "ast_hash": "6c95c0099d6678e9bf8b60f037f5f1f7",
     "semantic_hash": ""
   }
 }
